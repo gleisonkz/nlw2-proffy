@@ -12,7 +12,6 @@ export async function up(knex: Knex) {
              .inTable('users')
              .onUpdate('CASCADE')
              .onDelete('CASCADE');
-
     });
 }
 

@@ -23,9 +23,7 @@ export default class ClassesController {
                 error: "Missing filters to search classes"
             })
         }
-
         const timesInMinutes = convertHourToMinutes(time);
-
 
         const classes = await db('classes')
             .whereExists(function () {
@@ -42,11 +40,7 @@ export default class ClassesController {
 
         response.json(classes);
     }
-
-
-
-
-
+    
     async create(request: Request, response: Response) {
         const {
             name,

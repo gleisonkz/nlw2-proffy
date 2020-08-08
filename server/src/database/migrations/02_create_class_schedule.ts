@@ -14,7 +14,6 @@ export async function up(knex: Knex) {
              .inTable('classes')
              .onUpdate('CASCADE')
              .onDelete('CASCADE');
-
     });
 }
 

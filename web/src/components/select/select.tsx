@@ -3,10 +3,9 @@ import './select.css';
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   name: string;
-  label: string;
+  label: string ;
   options: Array<{ value: string; label: string }>;
 }
-
 const Select: React.FC<SelectProps> = ({ label, name, options, ...rest }) => (
   <div className='select-block'>
     <label htmlFor={name}>{label}</label>
@@ -17,7 +16,7 @@ const Select: React.FC<SelectProps> = ({ label, name, options, ...rest }) => (
         return <option key={element.value} value={element.value}>{element.label}</option>
       })
     }
-    </select>
+    </select> 
   </div>
 );
 
