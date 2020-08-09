@@ -1,4 +1,3 @@
-import convertHourToMinutes from "../utils/convertHourToMinutes";
 import db from "../database/connection";
 
 import { Request, Response } from "express";

@@ -6,9 +6,12 @@
         "downlevel",
         "esnext",
         "favorited",
+        "knexfile",
         "proffys",
+        "respawn",
         "sourcemap",
         "tslib",
+        "tsnd",
         "typechecking",
         "unfavorite",
         "whatsapp"

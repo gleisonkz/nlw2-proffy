@@ -9,7 +9,7 @@ import './styles.css';
 import api from './../../services/api';
 
 function TeacherList() {
-  const [teachers, setTeachers] = useState([]);
+  const [teachers, setTeachers] = useState<Teacher[]>([]);
 
   const [subject, setSubject] = useState('');
   const [week_day, setWeekDay] = useState('');
@@ -18,7 +18,7 @@ function TeacherList() {
   async function searchTeachers(e: FormEvent) {
     e.preventDefault();
 
-    const response = await api.get('classes', {
+    const response = await api.get<Teacher[]>('classes', {
       params: {
         subject,
         week_day,
@@ -26,7 +26,7 @@ function TeacherList() {
       }
     });
 
-    setTeachers(response.data);    
+    setTeachers(response.data);
   }
 
 
@@ -85,7 +85,7 @@ function TeacherList() {
 
       <main>
         {
-          teachers.map((teacher: Teacher) => {
+          teachers.map((teacher) => {
             return <TeacherItem key={teacher.id} teacher={teacher} />
           })
         }
