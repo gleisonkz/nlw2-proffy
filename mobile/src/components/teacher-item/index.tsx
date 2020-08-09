@@ -24,7 +24,6 @@ interface TeacherItemProps {
     favorited: boolean;
 }
 
-
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
 
     const [isFavorited, setIsFavorited] = useState(favorited);

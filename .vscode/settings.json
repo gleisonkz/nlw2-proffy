@@ -5,10 +5,12 @@
         "browserslist",
         "downlevel",
         "esnext",
+        "favorited",
         "proffys",
         "sourcemap",
         "tslib",
         "typechecking",
+        "unfavorite",
         "whatsapp"
     ]
 }

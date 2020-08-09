@@ -7,10 +7,6 @@ import giveclassesBgImage from '../../assets/images/give-classes-background.png'
 
 import styles from './styles';
 
-
-
-
-
 function GiveClasses() {
     const { goBack } = useNavigation();
 
