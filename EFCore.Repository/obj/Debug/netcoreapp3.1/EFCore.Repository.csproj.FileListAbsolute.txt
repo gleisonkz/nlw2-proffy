@@ -1,0 +1,4 @@
+D:\Gleison\Developing\Projects\React\proffy\EFCore.Repository\bin\Debug\netcoreapp3.1\EFCore.Domain.dll
+D:\Gleison\Developing\Projects\React\proffy\EFCore.Repository\obj\Debug\netcoreapp3.1\EFCore.Repository.csprojAssemblyReference.cache
+D:\Gleison\Developing\Projects\React\proffy\EFCore.Repository\obj\Debug\netcoreapp3.1\EFCore.Repository.AssemblyInfoInputs.cache
+D:\Gleison\Developing\Projects\React\proffy\EFCore.Repository\obj\Debug\netcoreapp3.1\EFCore.Repository.AssemblyInfo.cs
