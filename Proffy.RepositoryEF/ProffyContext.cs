@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Proffy.Business.POCO;
 
-namespace Proffy.Repository
+namespace Proffy.RepositoryEF
 {
     public class ProffyContext : DbContext
     {
@@ -11,13 +11,5 @@ namespace Proffy.Repository
         public DbSet<Class> Class { get; set; }
         public DbSet<ClassSchedule> ClassSchedule { get; set; }
         public DbSet<Connection> Connection { get; set; }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-
-        //    modelBuilder.Entity<User>().Property(c => c.Name).HasMaxLength(200);
-
-        //}
     }
 }
