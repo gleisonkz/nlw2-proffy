@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Proffy.WebAPI.Controllers
 {
-    [Route("api/[controller]")]    
+    [Route("api/[controller]")]
     [ApiController]
     public class ConnectionController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace Proffy.WebAPI.Controllers
             this.context = context;
         }
 
-        [HttpGet]   
+        [HttpGet]
         [Route("count")]
         public IActionResult Get()
         {
@@ -47,7 +47,7 @@ namespace Proffy.WebAPI.Controllers
 
             context.Add(objConection);
             context.SaveChanges();
-            return Ok("Successfully");
+            return Ok("Connection createad successfully");
         }
     }
 }

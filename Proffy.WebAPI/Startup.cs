@@ -20,10 +20,10 @@ namespace Proffy.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ProffyContext>(options =>
-            {
-                options.UseSqlServer("Password=sa123456;Persist Security Info=True;User ID=sa;Initial Catalog=Proffy;Data Source=DESKTOP-2AKCSN7\\PROFFY");
-            });
+            _ = services.AddDbContext<ProffyContext>(options =>
+              {
+                  options.UseSqlServer("Password=sa123456;Persist Security Info=True;User ID=sa;Initial Catalog=Proffy;Data Source=DESKTOP-2AKCSN7\\PROFFY");
+              });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -9,7 +9,7 @@ namespace Proffy.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LessonController : ControllerBase
+    public class TeacherInfoController : ControllerBase
     {
         int ConvertHourToMinutes(string time)
         {
@@ -44,7 +44,7 @@ namespace Proffy.WebAPI.Controllers
         }
 
         public readonly ProffyContext context;
-        public LessonController(ProffyContext context)
+        public TeacherInfoController(ProffyContext context)
         {
             this.context = context;
         }
@@ -74,7 +74,7 @@ namespace Proffy.WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] TeacherInfoDTO classDTO)
+        public IActionResult Post([FromBody] TeacherInfoDTO teacherInfoDTO)
         {
             using (var transaction = context.Database.BeginTransaction())
             {
@@ -82,38 +82,39 @@ namespace Proffy.WebAPI.Controllers
                 {
                     var objUser = new Teacher()
                     {
-                        Name = classDTO.Name,
-                        Avatar = classDTO.Avatar,
-                        Bio = classDTO.Bio,
-                        WhatsApp = classDTO.WhatsApp
+                        Name = teacherInfoDTO.Name,
+                        Avatar = teacherInfoDTO.Avatar,
+                        Bio = teacherInfoDTO.Bio,
+                        WhatsApp = teacherInfoDTO.WhatsApp
                     };
                     context.Add(objUser);
 
                     var objClass = new Lesson()
                     {
-                        Subject = classDTO.Subject,
-                        Cost = classDTO.Cost,
+                        Subject = teacherInfoDTO.Subject,
+                        Cost = teacherInfoDTO.Cost,
                         Teacher = objUser
                     };
                     context.Add(objClass);
+                    context.SaveChanges();
 
-                    var objLstClassSchedule = new List<LessonSchedule>();
-                    foreach (var ClassScheduleItem in classDTO.Schedule)
+                    var objLstLessonSchedule = new List<LessonSchedule>();
+                    foreach (var LessonScheduleItem in teacherInfoDTO.Schedule)
                     {
                         var classSchedulePOCO = new LessonSchedule()
                         {
-                            To = ConvertHourToMinutes(ClassScheduleItem.To),
-                            From = ConvertHourToMinutes(ClassScheduleItem.From),
-                            WeekDay = ClassScheduleItem.WeekDay,
+                            To = ConvertHourToMinutes(LessonScheduleItem.To),
+                            From = ConvertHourToMinutes(LessonScheduleItem.From),
+                            WeekDay = LessonScheduleItem.WeekDay,
                             Lesson = objClass
                         };
-                        objLstClassSchedule.Add(classSchedulePOCO);
+                        objLstLessonSchedule.Add(classSchedulePOCO);
                     }
-                    context.AddRange(objLstClassSchedule);
+                    context.AddRange(objLstLessonSchedule);
 
                     context.SaveChanges();
                     transaction.Commit();
-                    return Ok("Successfully");
+                    return Ok("TeacherInfo createad successfully");
                 }
                 catch (Exception ex)
                 {
