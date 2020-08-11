@@ -14,13 +14,14 @@ namespace Proffy.WebAPI.Controllers
     {
         private readonly ProffyContext _context;
 
+
         public ConnectionController(ProffyContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public ActionResult<JsonResult> Get()
+        public ActionResult Get()
         {
             try
             {
@@ -45,7 +46,7 @@ namespace Proffy.WebAPI.Controllers
                 CreatedAt = DateTime.Now
             };
 
-            _context.Connection.Add(objConection);
+            _context.Add(objConection);
             _context.SaveChanges();
         }
     }
