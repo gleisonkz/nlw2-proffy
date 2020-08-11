@@ -9,7 +9,7 @@ import './styles.css';
 import api from './../../services/api';
 
 function TeacherList() {
-  const [teachers, setTeachers] = useState<Teacher[]>([]);
+  const [teachers, setTeachers] = useState<Teacher[]>([]);  
 
   const [subject, setSubject] = useState('');
   const [week_day, setWeekDay] = useState('');

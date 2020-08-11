@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6vhXxOWEvXN6U8gH/b0FB5LtYNX2bg6s7OOr1ncI5i2JCLHjw86/Y4W4y9uS72Kz9HdWKiv7rJGrDb0cApHB+Q==",
+  "dgSpecHash": "nVrpZ3nYulL0UG7VGhKsdd8FrHiyLjkMFdaYGMNq5LUomzu0f/HfAVyfwPi6rST7n98kvGuOm5BuPVslvlexRA==",
   "success": true,
   "projectFilePath": "D:\\Gleison\\Developing\\Projects\\React\\proffy\\Proffy.WebAPI\\Proffy.WebAPI.csproj",
   "expectedPackageFiles": [
@@ -111,9 +111,9 @@
     "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore\\2.2.2\\microsoft.entityframeworkcore.2.2.2.nupkg.sha512",
     "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\2.2.2\\microsoft.entityframeworkcore.abstractions.2.2.2.nupkg.sha512",
     "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\2.2.2\\microsoft.entityframeworkcore.analyzers.2.2.2.nupkg.sha512",
-    "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.design\\2.2.0\\microsoft.entityframeworkcore.design.2.2.0.nupkg.sha512",
+    "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.design\\2.2.2\\microsoft.entityframeworkcore.design.2.2.2.nupkg.sha512",
     "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\2.2.0\\microsoft.entityframeworkcore.inmemory.2.2.0.nupkg.sha512",
-    "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\2.2.0\\microsoft.entityframeworkcore.relational.2.2.0.nupkg.sha512",
+    "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\2.2.2\\microsoft.entityframeworkcore.relational.2.2.2.nupkg.sha512",
     "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\2.2.0\\microsoft.entityframeworkcore.sqlserver.2.2.0.nupkg.sha512",
     "C:\\Users\\gleis\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\2.2.0\\microsoft.entityframeworkcore.tools.2.2.0.nupkg.sha512",
     "C:\\Users\\gleis\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\2.2.0\\microsoft.extensions.caching.abstractions.2.2.0.nupkg.sha512",

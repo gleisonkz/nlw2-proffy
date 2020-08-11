@@ -22,7 +22,7 @@ namespace Proffy.WebAPI
         {
             services.AddDbContext<ProffyContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Production"));
+                options.UseSqlServer("Password=sa123456;Persist Security Info=True;User ID=sa;Initial Catalog=Proffy;Data Source=DESKTOP-2AKCSN7\\PROFFY");
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

@@ -1737,11 +1737,11 @@
       "Microsoft.EntityFrameworkCore.Analyzers/2.2.2": {
         "type": "package"
       },
-      "Microsoft.EntityFrameworkCore.Design/2.2.0": {
+      "Microsoft.EntityFrameworkCore.Design/2.2.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.2.0"
+          "Microsoft.EntityFrameworkCore.Relational": "2.2.2"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -1765,10 +1765,10 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/2.2.0": {
+      "Microsoft.EntityFrameworkCore.Relational/2.2.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.2.0"
+          "Microsoft.EntityFrameworkCore": "2.2.2"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -4764,6 +4764,8 @@
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "2.2.2",
+          "Microsoft.EntityFrameworkCore.Design": "2.2.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
           "Proffy.Business": "1.0.0",
           "Proffy.Repository": "1.0.0"
         },
@@ -6291,10 +6293,10 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/2.2.0": {
-      "sha512": "mcsUEzg1bWvPgj/isz7aabDy41x+x8WBTmSF+JFsDGe3K5ZElWT2FSr3LLmkXk/5BLWJ3f9SDe0YR55u3ZgHrw==",
+    "Microsoft.EntityFrameworkCore.Design/2.2.2": {
+      "sha512": "n4Nanuwwae1k98I+W8FgM9E8lx0D70smrpVaHkygh4lG4n+E2eRcZnpgUfhBxqgDRSjXGCHduzLZXU8/jjDe8Q==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/2.2.0",
+      "path": "microsoft.entityframeworkcore.design/2.2.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6304,7 +6306,7 @@
         "lib/net461/Microsoft.EntityFrameworkCore.Design.xml",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.2.2.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.2.2.2.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -6321,16 +6323,16 @@
         "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/2.2.0": {
-      "sha512": "CRJHHp/GqmXByeeODgbDgMDWId9kKT9TDRzHF8voWHFNTajBQl0U4jaMrHxjIP6hJ2olF8n+5GYmQv+v3bUVKQ==",
+    "Microsoft.EntityFrameworkCore.Relational/2.2.2": {
+      "sha512": "TxEceodhB3WUCi9SLXHQYgCF7sgU1Se1RnJ/RMwW0ETNM1T2s5OUEEP4njfRmXOfInjgy0fkpMjP+0pV6ieKVQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/2.2.0",
+      "path": "microsoft.entityframeworkcore.relational/2.2.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.2.2.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.2.2.2.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
@@ -13020,7 +13022,7 @@
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.AspNetCore.StaticFiles >= 2.2.0",
-      "Microsoft.EntityFrameworkCore.Design >= 2.2.0",
+      "Microsoft.EntityFrameworkCore.Design >= 2.2.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.0",
       "Microsoft.EntityFrameworkCore.Tools >= 2.2.0",
       "Microsoft.Extensions.Logging.Debug >= 2.2.0",
@@ -13108,7 +13110,7 @@
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "target": "Package",
-            "version": "[2.2.0, )"
+            "version": "[2.2.2, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",

@@ -12,4 +12,6 @@ namespace Proffy.RepositoryEF
         public DbSet<ClassSchedule> ClassSchedule { get; set; }
         public DbSet<Connection> Connection { get; set; }
     }
+
+
 }

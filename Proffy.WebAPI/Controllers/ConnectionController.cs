@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Proffy.Business.POCO;
 using Proffy.RepositoryEF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,51 +19,34 @@ namespace Proffy.WebAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Connection
         [HttpGet]
-        public IEnumerable<Connection> GetConnection()
+        public ActionResult<JsonResult> Get()
         {
-            return _context.Connection;
+            try
+            {
+                var result = new
+                {
+                    total = _context.Connection.Count()
+                };
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
         }
 
-        // GET: api/Connection/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetConnection([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var connection = await _context.Connection.FindAsync(id);
-
-            if (connection == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(connection);
-        }
-
-
-        // POST: api/Connection
         [HttpPost]
-        public async Task<IActionResult> PostConnection([FromBody] Connection connection)
+        public void Post([FromBody] Connection connection)
         {
-            if (!ModelState.IsValid)
+            var objConection = new Connection()
             {
-                return BadRequest(ModelState);
-            }
+                UserID = connection.UserID,
+                CreatedAt = DateTime.Now
+            };
 
-            _context.Connection.Add(connection);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetConnection", new { id = connection.ConnectionID }, connection);
-        }
-
-        private bool ConnectionExists(int id)
-        {
-            return _context.Connection.Any(e => e.ConnectionID == id);
+            _context.Connection.Add(objConection);
+            _context.SaveChanges();
         }
     }
 }

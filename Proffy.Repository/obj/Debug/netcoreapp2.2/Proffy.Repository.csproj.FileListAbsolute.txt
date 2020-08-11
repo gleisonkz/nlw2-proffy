@@ -6,4 +6,3 @@ D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcorea
 D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.csproj.CoreCompileInputs.cache
 D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.dll
 D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.pdb
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.csprojAssemblyReference.cache

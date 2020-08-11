@@ -1,9 +1,3 @@
-D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.csprojAssemblyReference.cache
-D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.AssemblyInfoInputs.cache
-D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.AssemblyInfo.cs
-D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.csproj.CoreCompileInputs.cache
-D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.RazorAssemblyInfo.cache
-D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.RazorAssemblyInfo.cs
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\bin\Debug\netcoreapp2.2\appsettings.Development.json
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\bin\Debug\netcoreapp2.2\appsettings.json
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
@@ -18,6 +12,12 @@ D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\bin\Debug\netcoreapp2.
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\bin\Debug\netcoreapp2.2\Proffy.Business.pdb
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\bin\Debug\netcoreapp2.2\Proffy.RepositoryEF.pdb
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\bin\Debug\netcoreapp2.2\Proffy.Repository.pdb
+D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.csprojAssemblyReference.cache
+D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.AssemblyInfoInputs.cache
+D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.AssemblyInfo.cs
+D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.csproj.CoreCompileInputs.cache
+D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.RazorAssemblyInfo.cache
+D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.RazorAssemblyInfo.cs
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.RazorTargetAssemblyInfo.cache
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.csproj.CopyComplete
 D:\Gleison\Developing\Projects\React\proffy\Proffy.WebAPI\obj\Debug\netcoreapp2.2\Proffy.WebAPI.dll

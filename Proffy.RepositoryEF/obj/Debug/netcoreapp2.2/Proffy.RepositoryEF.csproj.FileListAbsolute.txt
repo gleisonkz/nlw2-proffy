@@ -12,3 +12,6 @@ D:\Gleison\Developing\Projects\React\proffy\Proffy.RepositoryEF\obj\Debug\netcor
 D:\Gleison\Developing\Projects\React\proffy\Proffy.RepositoryEF\obj\Debug\netcoreapp2.2\Proffy.RepositoryEF.csproj.CopyComplete
 D:\Gleison\Developing\Projects\React\proffy\Proffy.RepositoryEF\obj\Debug\netcoreapp2.2\Proffy.RepositoryEF.dll
 D:\Gleison\Developing\Projects\React\proffy\Proffy.RepositoryEF\obj\Debug\netcoreapp2.2\Proffy.RepositoryEF.pdb
+D:\Gleison\Developing\Projects\React\proffy\Proffy.RepositoryEF\bin\Debug\netcoreapp2.2\Proffy.RepositoryEF.runtimeconfig.json
+D:\Gleison\Developing\Projects\React\proffy\Proffy.RepositoryEF\bin\Debug\netcoreapp2.2\Proffy.RepositoryEF.runtimeconfig.dev.json
+D:\Gleison\Developing\Projects\React\proffy\Proffy.RepositoryEF\obj\Debug\netcoreapp2.2\Proffy.RepositoryEF.genruntimeconfig.cache

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Proffy.Business.POCO;
+using Proffy.RepositoryEF;
 
 namespace Proffy.WebAPI.Controllers
 {
@@ -10,24 +12,55 @@ namespace Proffy.WebAPI.Controllers
     [ApiController]
     public class ClassController : ControllerBase
     {
-        // GET api/values
+        public readonly ProffyContext _context;
+        public ClassController(ProffyContext context)
+        {
+            _context = context;
+        }
+
+        // GET api/class
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            //List<User> users = 
+            //    _context.User
+            //    .Where(c=> c.)
+            //    .ToList();
+            
+            return Ok();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        // GET api/class/5
+        [HttpGet("{name}")]
+        public ActionResult<string> Get(string name)
         {
-            return "value";
+            var objClass = new User()
+            {
+                Name = name,
+                Avatar = "teste",
+                Bio = "Lorem Impsum",
+                WhatsApp = "31994490279"
+            };
+
+            _context.User.Add(objClass);
+            _context.SaveChanges();
+            return Ok();
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            //var objClass = new User()
+            //{
+            //    Name = "Gleison",
+            //    Avatar = "teste",
+            //    Bio = "Lorem Impsum",
+            //    WhatsApp = "31994490279"
+            //};
+
+            //_context.User.Add(objClass);
+            //_context.SaveChanges();
         }
 
         // PUT api/values/5

@@ -9,7 +9,7 @@ import { useFocusEffect } from '@react-navigation/native';
 
 function Favorites() {
 
-    const [favorites, setFavorites] = useState<Teacher[]>([]);
+    const [favorites, setFavorites] = useState<Teacher[]>([]);    
 
     function loadFavorites() {
         AsyncStorage.getItem('favorites').then(response => {
