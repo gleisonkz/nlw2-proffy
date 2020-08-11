@@ -6,7 +6,7 @@ namespace Proffy.Business.POCO
     {
         public int ConnectionID { get; set; }
         public DateTime CreatedAt { get; set; }
-        public int UserID { get; set; }
-        public User User { get; set; }
+        public int TeacherID { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }

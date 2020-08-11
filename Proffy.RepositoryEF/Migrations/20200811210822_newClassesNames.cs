@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proffy.RepositoryEF.Migrations
 {
-    public partial class init : Migration
+    public partial class newClassesNames : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "Teacher",
                 columns: table => new
                 {
-                    UserID = table.Column<int>(nullable: false)
+                    TeacherID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Avatar = table.Column<string>(nullable: true),
@@ -21,28 +21,7 @@ namespace Proffy.RepositoryEF.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.UserID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Class",
-                columns: table => new
-                {
-                    ClassID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Subject = table.Column<string>(nullable: true),
-                    Cost = table.Column<decimal>(nullable: false),
-                    UserID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Class", x => x.ClassID);
-                    table.ForeignKey(
-                        name: "FK_Class_User_UserID",
-                        column: x => x.UserID,
-                        principalTable: "User",
-                        principalColumn: "UserID",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Teacher", x => x.TeacherID);
                 });
 
             migrationBuilder.CreateTable(
@@ -52,70 +31,93 @@ namespace Proffy.RepositoryEF.Migrations
                     ConnectionID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
-                    UserID = table.Column<int>(nullable: false)
+                    TeacherID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Connection", x => x.ConnectionID);
                     table.ForeignKey(
-                        name: "FK_Connection_User_UserID",
-                        column: x => x.UserID,
-                        principalTable: "User",
-                        principalColumn: "UserID",
+                        name: "FK_Connection_Teacher_TeacherID",
+                        column: x => x.TeacherID,
+                        principalTable: "Teacher",
+                        principalColumn: "TeacherID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClassSchedule",
+                name: "Lesson",
                 columns: table => new
                 {
-                    ClassScheduleID = table.Column<int>(nullable: false)
+                    LessonID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Subject = table.Column<string>(nullable: true),
+                    Cost = table.Column<decimal>(nullable: false),
+                    TeacherID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lesson", x => x.LessonID);
+                    table.ForeignKey(
+                        name: "FK_Lesson_Teacher_TeacherID",
+                        column: x => x.TeacherID,
+                        principalTable: "Teacher",
+                        principalColumn: "TeacherID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LessonSchedule",
+                columns: table => new
+                {
+                    LessonScheduleID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     WeekDay = table.Column<int>(nullable: false),
                     From = table.Column<int>(nullable: false),
                     To = table.Column<int>(nullable: false),
-                    ClassID = table.Column<int>(nullable: false)
+                    LessonID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClassSchedule", x => x.ClassScheduleID);
+                    table.PrimaryKey("PK_LessonSchedule", x => x.LessonScheduleID);
                     table.ForeignKey(
-                        name: "FK_ClassSchedule_Class_ClassID",
-                        column: x => x.ClassID,
-                        principalTable: "Class",
-                        principalColumn: "ClassID",
+                        name: "FK_LessonSchedule_Lesson_LessonID",
+                        column: x => x.LessonID,
+                        principalTable: "Lesson",
+                        principalColumn: "LessonID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Class_UserID",
-                table: "Class",
-                column: "UserID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ClassSchedule_ClassID",
-                table: "ClassSchedule",
-                column: "ClassID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Connection_UserID",
+                name: "IX_Connection_TeacherID",
                 table: "Connection",
-                column: "UserID");
+                column: "TeacherID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Lesson_TeacherID",
+                table: "Lesson",
+                column: "TeacherID",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LessonSchedule_LessonID",
+                table: "LessonSchedule",
+                column: "LessonID",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ClassSchedule");
-
-            migrationBuilder.DropTable(
                 name: "Connection");
 
             migrationBuilder.DropTable(
-                name: "Class");
+                name: "LessonSchedule");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "Lesson");
+
+            migrationBuilder.DropTable(
+                name: "Teacher");
         }
     }
 }

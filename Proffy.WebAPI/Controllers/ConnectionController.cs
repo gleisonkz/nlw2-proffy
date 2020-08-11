@@ -2,32 +2,31 @@
 using Proffy.Business.POCO;
 using Proffy.RepositoryEF;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Proffy.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")]    
     [ApiController]
     public class ConnectionController : ControllerBase
     {
-        private readonly ProffyContext _context;
+        private readonly ProffyContext context;
 
 
         public ConnectionController(ProffyContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
-        [HttpGet]
-        public ActionResult Get()
+        [HttpGet]   
+        [Route("count")]
+        public IActionResult Get()
         {
             try
             {
                 var result = new
                 {
-                    total = _context.Connection.Count()
+                    total = context.Connection.Count()
                 };
                 return Ok(result);
             }
@@ -38,16 +37,17 @@ namespace Proffy.WebAPI.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] Connection connection)
+        public IActionResult Post([FromBody] Connection connection)
         {
             var objConection = new Connection()
             {
-                UserID = connection.UserID,
+                TeacherID = connection.TeacherID,
                 CreatedAt = DateTime.Now
             };
 
-            _context.Add(objConection);
-            _context.SaveChanges();
+            context.Add(objConection);
+            context.SaveChanges();
+            return Ok("Successfully");
         }
     }
 }

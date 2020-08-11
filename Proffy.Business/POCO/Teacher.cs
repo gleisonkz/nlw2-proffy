@@ -1,11 +1,12 @@
 ﻿namespace Proffy.Business.POCO
 {
-    public class User
+    public class Teacher
     {
-        public int UserID { get; set; }
+        public int TeacherID { get; set; }
         public string Name { get; set; }
         public string Avatar { get; set; }
         public string WhatsApp { get; set; }
         public string Bio { get; set; }
+        public Lesson Lesson { get; set; }
     }
 }

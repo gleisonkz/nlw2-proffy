@@ -7,9 +7,9 @@ namespace Proffy.RepositoryEF
     {
         public ProffyContext(DbContextOptions<ProffyContext> options) : base(options) { }
 
-        public DbSet<User> User { get; set; }
-        public DbSet<Class> Class { get; set; }
-        public DbSet<ClassSchedule> ClassSchedule { get; set; }
+        public DbSet<Teacher> Teacher { get; set; }
+        public DbSet<Lesson> Lesson { get; set; }
+        public DbSet<LessonSchedule> LessonSchedule { get; set; }
         public DbSet<Connection> Connection { get; set; }
     }
 
