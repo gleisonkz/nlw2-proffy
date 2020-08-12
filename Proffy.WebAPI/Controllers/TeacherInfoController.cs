@@ -80,22 +80,22 @@ namespace Proffy.WebAPI.Controllers
             {
                 try
                 {
-                    var objUser = new Teacher()
+                    var objTeacher = new Teacher()
                     {
                         Name = teacherInfoDTO.Name,
                         Avatar = teacherInfoDTO.Avatar,
                         Bio = teacherInfoDTO.Bio,
                         WhatsApp = teacherInfoDTO.WhatsApp
                     };
-                    context.Add(objUser);
+                    context.Add(objTeacher);
 
-                    var objClass = new Lesson()
+                    var objLesson = new Lesson()
                     {
                         Subject = teacherInfoDTO.Subject,
                         Cost = teacherInfoDTO.Cost,
-                        Teacher = objUser
+                        Teacher = objTeacher
                     };
-                    context.Add(objClass);
+                    context.Add(objLesson);
                     context.SaveChanges();
 
                     var objLstLessonSchedule = new List<LessonSchedule>();
@@ -106,7 +106,7 @@ namespace Proffy.WebAPI.Controllers
                             To = ConvertHourToMinutes(LessonScheduleItem.To),
                             From = ConvertHourToMinutes(LessonScheduleItem.From),
                             WeekDay = LessonScheduleItem.WeekDay,
-                            Lesson = objClass
+                            Lesson = objLesson
                         };
                         objLstLessonSchedule.Add(classSchedulePOCO);
                     }
