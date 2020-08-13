@@ -1,4 +1,4 @@
-Cimport React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import PageHeader from '../../components/page-header/page-header';
@@ -203,5 +203,4 @@ function TeacherForm() {
     </div>
   );
 }
-
 export default TeacherForm;

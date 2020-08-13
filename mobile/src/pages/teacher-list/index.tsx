@@ -10,11 +10,8 @@ import TeacherItem, { Teacher } from '../../components/teacher-item';
 import api from '../../services/api';
 
 import styles from './styles';
-import { useFocusEffect } from '@react-navigation/native';
-
 
 function TeacherList() {
-
 
     const [teachers, setTeachers] = useState([]);
     const [favorites, setFavorites] = useState<number[]>([]);
@@ -23,8 +20,6 @@ function TeacherList() {
     const [subject, setSubject] = useState('');
     const [week_day, setWeekDay] = useState('');
     const [time, setTime] = useState('');
-
-
 
     function handleToggleFiltersVisible() {
         setIsFilterVisible(!isFiltersVisible)
@@ -61,9 +56,7 @@ function TeacherList() {
         });
         setTeachers(response.data);
         setIsFilterVisible(false);
-
     }
-
 
     return (
         <View style={styles.container} >
@@ -132,5 +125,4 @@ function TeacherList() {
         </View>
     )
 }
-
 export default TeacherList;
