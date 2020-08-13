@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Proffy.Business.POCO;
 using Proffy.RepositoryEF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Proffy.WebAPI.Controllers
 {
@@ -11,6 +14,43 @@ namespace Proffy.WebAPI.Controllers
     [ApiController]
     public class TeacherInfoController : ControllerBase
     {
+        public interface IRepository
+        {
+            void Add<T>(T entity) where T : class;
+            void Update<T>(T entity) where T : class;
+            void Delete<T>(T entity) where T : class;
+            Task<bool> SaveChangesAsync();
+        }
+
+        public class EFCoreRepository : IRepository
+        {
+            private readonly ProffyContext context;
+
+            public EFCoreRepository(ProffyContext context)
+            {
+                this.context = context;
+            }
+            public void Add<T>(T entity) where T : class
+            {
+                context.Add(entity);
+            }
+
+            public void Delete<T>(T entity) where T : class
+            {
+                context.Remove(entity);
+            }
+
+            public void Update<T>(T entity) where T : class
+            {
+                context.Update(entity);
+            }
+
+            public async Task<bool> SaveChangesAsync()
+            {
+                return await context.SaveChangesAsync() > 0;
+            }
+        }
+
         int ConvertHourToMinutes(string time)
         {
             int hourInMinutes = time.Split(':')
@@ -76,7 +116,7 @@ namespace Proffy.WebAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] TeacherInfoDTO teacherInfoDTO)
         {
-            using (var transaction = context.Database.BeginTransaction())
+            // using (var transaction = context.Database.BeginTransaction())
             {
                 try
                 {
@@ -88,6 +128,7 @@ namespace Proffy.WebAPI.Controllers
                         WhatsApp = teacherInfoDTO.WhatsApp
                     };
                     context.Add(objTeacher);
+                    context.SaveChanges();
 
                     var objLesson = new Lesson()
                     {
@@ -98,7 +139,7 @@ namespace Proffy.WebAPI.Controllers
                     context.Add(objLesson);
                     context.SaveChanges();
 
-                    var objLstLessonSchedule = new List<LessonSchedule>();
+                    // var objLstLessonSchedule = new List<LessonSchedule>();
                     foreach (var LessonScheduleItem in teacherInfoDTO.Schedule)
                     {
                         var classSchedulePOCO = new LessonSchedule()
@@ -108,17 +149,19 @@ namespace Proffy.WebAPI.Controllers
                             WeekDay = LessonScheduleItem.WeekDay,
                             Lesson = objLesson
                         };
-                        objLstLessonSchedule.Add(classSchedulePOCO);
+                        context.Add(classSchedulePOCO);
+                        context.SaveChanges();
+                        // objLstLessonSchedule.Add(classSchedulePOCO);
                     }
-                    context.AddRange(objLstLessonSchedule);
+                    // context.AddRange(objLstLessonSchedule);
 
                     context.SaveChanges();
-                    transaction.Commit();
+                    // transaction.Commit();
                     return Ok("TeacherInfo createad successfully");
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
+                    // transaction.Rollback();
                     return BadRequest($"Erro: {ex}");
                 }
             }

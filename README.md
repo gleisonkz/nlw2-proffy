@@ -3,6 +3,10 @@
 <p><strong>ATENÇÃO:</strong> em andamento...</p>
 <br/>
 
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/gleisonkz/proffy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/gleisonkz/proffy/context:javascript)
+![GitHub top language](https://img.shields.io/github/languages/top/gleisonkz/proffy)
+![GitHub last commit](https://img.shields.io/github/last-commit/gleisonkz/proffy)
+
 ## Sobre o projeto
 **Proffy** é uma plataforma de estudos online que tem objetivo conectar alunos e professores.
 
