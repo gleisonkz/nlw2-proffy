@@ -6,9 +6,9 @@ import Input from '../../components/input/input';
 import Textarea from './../../components/text-area/text-area';
 import Select from './../../components/select/select';
 
-import warningIcon from '../../assets/images/icons/warning.svg';
-
 import api from './../../services/api';
+
+import warningIcon from '../../assets/images/icons/warning.svg';
 
 import './styles.css';
 
