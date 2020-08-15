@@ -1,4 +1,7 @@
-﻿namespace Proffy.Business.POCO
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace Proffy.Business.POCO
 {
     public class Lesson
     {
@@ -7,6 +10,6 @@
         public decimal Cost { get; set; }
         public int TeacherID { get; set; }
         public Teacher Teacher { get; set; }
-        public LessonSchedule LessonSchedule { get; set; }
+        public ICollection<LessonSchedule> LessonSchedule { get; set; }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Proffy.Business.POCO;
+using Proffy.Business.Services;
 using Proffy.RepositoryEF;
+using Proffy.WebAPI.DTO;
 using System;
 using System.Linq;
+using static Proffy.WebAPI.Controllers.TeacherInfoController;
 
 namespace Proffy.WebAPI.Controllers
 {
@@ -11,11 +13,12 @@ namespace Proffy.WebAPI.Controllers
     public class ConnectionController : ControllerBase
     {
         private readonly ProffyContext context;
-
+        private readonly ConnectionService svcConnection;
 
         public ConnectionController(ProffyContext context)
         {
             this.context = context;
+            svcConnection = new ConnectionService(new EFCoreRepository(context));
         }
 
         [HttpGet]
@@ -37,17 +40,22 @@ namespace Proffy.WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Connection connection)
+        public IActionResult Post([FromBody] ConnectionDTO connectionDTO)
         {
-            var objConection = new Connection()
+            using (var transaction = context.Database.BeginTransaction())
             {
-                TeacherID = connection.TeacherID,
-                CreatedAt = DateTime.Now
-            };
-
-            context.Add(objConection);
-            context.SaveChanges();
-            return Ok("Connection createad successfully");
+                try
+                {
+                    var connection = svcConnection.CreateConnection(connectionDTO);
+                    transaction.Commit();
+                    return Ok(connection + " Connection createad successfully");
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    return BadRequest($"Erro: {ex.Message}");
+                }
+            }
         }
     }
 }

@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Proffy.Business.Interfaces;
 using Proffy.RepositoryEF;
+using static Proffy.WebAPI.Controllers.TeacherInfoController;
 
 namespace Proffy.WebAPI
 {
@@ -25,6 +27,7 @@ namespace Proffy.WebAPI
                   options.UseSqlServer("Password=sa123456;Persist Security Info=True;User ID=sa;Initial Catalog=Proffy;Data Source=DESKTOP-2AKCSN7\\PROFFY");
               });
 
+            services.AddScoped<IRepository, EFCoreRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
