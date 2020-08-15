@@ -1,26 +1,31 @@
 ﻿using Proffy.Business.Interfaces;
 using Proffy.Business.POCO;
+using Proffy.Repository.Interfaces;
 using System;
 using System.Linq;
 
 namespace Proffy.Business.Services
 {
-    public class ConnectionService
+    public interface IConnectionService : IServiceFacade
     {
-        private readonly IRepository repository;
+        int GetTotalConnections();
+        Connection CreateConnection(IConnectionDTO connectionDTO);
+    }
 
-        public ConnectionService(IRepository repository)
+    public class ConnectionService : ServiceFacadeBase, IConnectionService
+    {
+        private readonly IRepository<Connection> repoConnection;
+
+        public ConnectionService(IFactoryRepository factoryRepository, IUnityOfWork unityOfWork)
+            : base(factoryRepository, unityOfWork)
         {
-            this.repository = repository;
+            repoConnection = factoryRepository.CreateRepository<Connection>();
         }
 
         public int GetTotalConnections()
         {
-            //var connections = repository.con
-
-            //repository.Add(teacher);
-            //return teacher;
-            return 1;
+            var connections = repoConnection.GetQuery().Count();
+            return connections;
         }
 
         public Connection CreateConnection(IConnectionDTO connectionDTO)
@@ -31,8 +36,7 @@ namespace Proffy.Business.Services
                 CreatedAt = DateTime.Now
             };
 
-            repository.Add(objConection);
-            repository.SaveChangesAsync();
+            repoConnection.Add(objConection);
             return objConection;
         }
     }

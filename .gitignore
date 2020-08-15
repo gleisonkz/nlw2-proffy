@@ -5,6 +5,19 @@
 /mobile/node_modules
 /server/node_modules
 
+
+/Proffy.WebAPI/bin
+/Proffy.WebAPI/obj
+
+/Proffy.RepositoryEF/bin
+/Proffy.RepositoryEF/obj
+
+/Proffy.Repository/bin
+/Proffy.Repository/obj
+
+/Proffy.Business/bin
+/Proffy.Business/obj
+
 /.pnp
 .pnp.js
 

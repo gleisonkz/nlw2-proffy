@@ -1,30 +1,74 @@
 ﻿using Proffy.Business.Interfaces;
 using Proffy.Business.POCO;
-using System;
+using Proffy.Repository.Interfaces;
 using System.Linq;
 
 namespace Proffy.Business.Services
 {
-    public class TeacherInfoService
+    public interface IFactoryRepository
     {
-        int ConvertHourToMinutes(string time)
-        {
-            int hourInMinutes = time.Split(':')
-                                    .Select(c => int.Parse(c))
-                                    .Aggregate((hour, minute) => (hour * 60) + minute);
-            return hourInMinutes;
-        }
-        private readonly IRepository repository;
+        IRepository<T> CreateRepository<T>() where T : class;
+    }
 
-        public TeacherInfoService(IRepository repository)
+    public interface IServiceFacade
+    {
+        int Commit();
+        void Rollback();
+    }
+
+    public abstract class ServiceFacadeBase : IServiceFacade
+    {
+
+        private readonly IUnityOfWork unityOfWork;
+        private readonly IFactoryRepository factoryRepository;
+
+        public ServiceFacadeBase(IFactoryRepository factoryRepository, IUnityOfWork unityOfWork)
         {
-            this.repository = repository;
+            this.unityOfWork = unityOfWork;
+            this.factoryRepository = factoryRepository;
+        }
+        public int Commit()
+        {
+            return unityOfWork.Commit();
         }
 
-        //public Teacher GetTeacher()
-        //{
-        //    repository.
-        //}
+        public void Rollback()
+        {
+            unityOfWork.Rollback();
+        }
+    }
+
+    public interface ITeacherInfoService : IServiceFacade
+    {
+        IQueryable<Teacher> GetTeachers();
+        IQueryable<Lesson> GetLessons();
+        Teacher CreateTeacher<T>(ITeacherInfoDTO<T> teacherInfoDTO) where T : ILessonScheduleDTO;
+    }
+
+    public class TeacherInfoService : ServiceFacadeBase, ITeacherInfoService
+    {
+        private readonly IRepository<Teacher> repoTeacher;
+        private readonly IRepository<Lesson> repoLesson;
+        private readonly IRepository<LessonSchedule> repoLessonSchedule;
+
+
+
+        public TeacherInfoService(IFactoryRepository factoryRepository, IUnityOfWork unityOfWork) :
+            base(factoryRepository, unityOfWork)
+        {
+            repoTeacher = factoryRepository.CreateRepository<Teacher>();
+            repoLesson = factoryRepository.CreateRepository<Lesson>();
+            repoLessonSchedule = factoryRepository.CreateRepository<LessonSchedule>();
+        }
+
+        public IQueryable<Teacher> GetTeachers()
+        {
+            return repoTeacher.GetQuery();
+        }
+        public IQueryable<Lesson> GetLessons()
+        {
+            return repoLesson.GetQuery();
+        }
 
         public Teacher CreateTeacher<T>(ITeacherInfoDTO<T> teacherInfoDTO) where T : ILessonScheduleDTO
         {
@@ -36,7 +80,7 @@ namespace Proffy.Business.Services
                 WhatsApp = teacherInfoDTO.WhatsApp
             };
 
-            repository.Add(teacher);
+            repoTeacher.Add(teacher);
 
             var lesson = CreateLesson(teacherInfoDTO);
             lesson.Teacher = teacher;
@@ -58,17 +102,17 @@ namespace Proffy.Business.Services
                 Subject = lessonDTO.Subject,
                 Cost = lessonDTO.Cost,
             };
-            return repository.Add(objLesson);
+            return repoLesson.Add(objLesson);
         }
         private LessonSchedule CreateLessonSchedule(ILessonScheduleDTO LessonScheduleItem)
         {
             var lessonSchedule = new LessonSchedule()
             {
-                To = ConvertHourToMinutes(LessonScheduleItem.To),
-                From = ConvertHourToMinutes(LessonScheduleItem.From),
+                To = Utils.ConvertHourToMinutes(LessonScheduleItem.To),
+                From = Utils.ConvertHourToMinutes(LessonScheduleItem.From),
                 WeekDay = LessonScheduleItem.WeekDay,
             };
-            var result = repository.Add(lessonSchedule);
+            var result = repoLessonSchedule.Add(lessonSchedule);
             return result;
         }
     }

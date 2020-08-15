@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Proffy.Business.Services;
-using Proffy.RepositoryEF;
 using Proffy.WebAPI.DTO;
 using System;
-using System.Linq;
-using static Proffy.WebAPI.Controllers.TeacherInfoController;
 
 namespace Proffy.WebAPI.Controllers
 {
@@ -12,13 +9,11 @@ namespace Proffy.WebAPI.Controllers
     [ApiController]
     public class ConnectionController : ControllerBase
     {
-        private readonly ProffyContext context;
-        private readonly ConnectionService svcConnection;
+        private readonly IConnectionService svcConnection;
 
-        public ConnectionController(ProffyContext context)
+        public ConnectionController(IConnectionService svcConnection)
         {
-            this.context = context;
-            svcConnection = new ConnectionService(new EFCoreRepository(context));
+            this.svcConnection = svcConnection;
         }
 
         [HttpGet]
@@ -29,7 +24,7 @@ namespace Proffy.WebAPI.Controllers
             {
                 var result = new
                 {
-                    total = context.Connection.Count()
+                    total = svcConnection.GetTotalConnections()
                 };
                 return Ok(result);
             }
@@ -42,19 +37,16 @@ namespace Proffy.WebAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] ConnectionDTO connectionDTO)
         {
-            using (var transaction = context.Database.BeginTransaction())
+            try
             {
-                try
-                {
-                    var connection = svcConnection.CreateConnection(connectionDTO);
-                    transaction.Commit();
-                    return Ok(connection + " Connection createad successfully");
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    return BadRequest($"Erro: {ex.Message}");
-                }
+                var connection = svcConnection.CreateConnection(connectionDTO);
+                svcConnection.Commit();
+                return Ok(connection + " Connection createad successfully");
+            }
+            catch (Exception ex)
+            {
+                svcConnection.Rollback();
+                return BadRequest($"Erro: {ex.Message}");
             }
         }
     }
