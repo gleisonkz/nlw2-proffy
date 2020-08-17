@@ -8,6 +8,10 @@ section {
 }
 
 .slogan {
+  background: url('../../assets/images/backgroundLogin.svg');
+  background-size: 480px 584px;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,14 +52,13 @@ section {
 }
 
 .login-form form header {
-
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
   line-height: 36px;
   color: #32264d;
-  margin-bottom: 4.0rem;
+  margin-bottom: 4rem;
 }
 
 .input-block {
@@ -64,8 +67,20 @@ section {
 
 .input-block label {
   position: absolute;
+  top: 1.2rem;
+  line-height: 2.4rem;
   top: 45%;
   left: 10%;
+  font-size: 1.6rem;
+  transition: top 0.7s, font-size 0.7s;
+}
+
+.input-block label {
+  position: absolute;
+  top: 1.6rem;
+  line-height: 2.4rem;
+  top: 2.4rem;
+  left: 2.4rem;
 }
 
 .input-block img {
@@ -78,7 +93,72 @@ section {
   position: absolute;
   top: 39%;
   left: 85%;
-  cursor: pointer;  
+  cursor: pointer;
+}
+
+.input-block::after {
+  width: calc(2.2rem);
+  width: 2px;
+  height: 0rem;
+  border-radius: 8px;
+  content: '';
+  background: var(--color-primary-light);
+  position: absolute;
+  bottom: 0.5rem;
+  left: -0rem;
+  transition: height 0.5s;
+}
+
+.input-block:focus-within::after {
+  width: calc(2.2rem);
+  width: 2px;
+  height: 4.2rem;
+  border-radius: 8px;
+  content: '';
+  background: var(--color-primary-light);
+  position: absolute;
+  bottom: 0.5rem;
+  left: -0rem;
+  transition: height 0.5s;
+}
+
+.input-block:focus-within label {
+  font-size: 1.2rem;
+  top: 1.4rem;
+  line-height: 2rem;
+}
+
+.help span {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: var(--color-text-complement);
+  display: flex;
+}
+
+.checkbox-button {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-button > input {
+  margin-right: 1.6rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: #04d361;
+  border-radius: 8px;
+}
+
+.checkbox-button > input:checked {
+  background: #04d361;
+}
+
+.help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* section > img {
