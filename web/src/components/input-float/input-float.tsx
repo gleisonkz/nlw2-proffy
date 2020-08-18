@@ -13,7 +13,7 @@ const InputFloat: React.FC<InputProps> = ({ label, name, icon, ...rest }) => {
   const [hiddenPassword, setHiddenPassword] = useState(false);
 
   return (
-    <div className="input-block-float">
+    <div className="input-block-float"> 
       <input
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
