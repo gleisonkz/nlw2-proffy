@@ -71,20 +71,38 @@ section {
   display: flex;
 }
 
-.login .checkbox-button {
+.login .checkbox-wrapper {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
-.login .checkbox-button > input {
-  border: 0;
+.login .checkbox-wrapper > input {
+  outline: none;
+  appearance: none;
+  background: #fafafc;
+  border: 1px solid #e6e6f0;
+  box-sizing: border-box;
+  border-radius: 8px;
+
   margin-right: 1.6rem;
   width: 2.4rem;
   height: 2.4rem;
 }
 
-.login .checkbox-button > input:checked {
-  background-color: #04d361;
+.login .checkbox-wrapper > input:checked:before {
+  content: '\2713';
+  display: inline-block;
+  color: white;
+  padding-left: 4px;
+}
+
+.login .checkbox-wrapper > input:checked {
+  background: #04d361;
+  border: 2px solid #04d361;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: red;
 }
 
 .login .help {
@@ -106,6 +124,7 @@ section {
   outline: transparent;
   margin-top: 4rem;
   line-height: 26px;
+  transition: background 0.5s, color 0.5s;
 }
 
 .login form > button:enabled {

@@ -30,12 +30,11 @@ function Login() {
         </div>
       </article>
       <article className="login-form">
-        <form 
-        onSubmit={handleCreateClass}
-        action=""
+        <form
+          onSubmit={handleCreateClass}
+          action=""
         >
           <header>Fazer Login</header>
-
           <main>
             <InputFloat
               label={"E-mail"}
@@ -48,10 +47,10 @@ function Login() {
               name={"password"}
               icon={showPasswordIcon}
               value={password}
-              onChange={(e) => setPassword(e.target.value)}              
+              onChange={(e) => setPassword(e.target.value)}
             />
             <div className="help">
-              <div className="checkbox-button">
+              <div className="checkbox-wrapper">
                 <input type="checkbox" />
                 <span>Lembrar-me</span>
               </div>
@@ -60,7 +59,6 @@ function Login() {
               </div>
             </div>
           </main>
-
           <button
             disabled={!(password && email)}
             type='submit'
