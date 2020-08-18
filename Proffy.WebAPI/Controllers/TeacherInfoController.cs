@@ -39,7 +39,7 @@ namespace Proffy.WebAPI.Controllers
                 })
                 .ToList();
 
-            return Ok();
+            return Ok(teachers);
         }
 
         [HttpPost]
