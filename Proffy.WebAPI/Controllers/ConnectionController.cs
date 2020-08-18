@@ -41,7 +41,7 @@ namespace Proffy.WebAPI.Controllers
             {
                 var connection = svcConnection.CreateConnection(connectionDTO);
                 svcConnection.Commit();
-                return Ok(connection + " Connection createad successfully");
+                return Ok(connection);
             }
             catch (Exception ex)
             {

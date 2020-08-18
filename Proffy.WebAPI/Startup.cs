@@ -4,12 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Proffy.Business.Interfaces;
 using Proffy.Business.Services;
 using Proffy.Repository.Interfaces;
 using Proffy.RepositoryEF;
 using Proffy.RepositoryEF.Class;
-using static Proffy.WebAPI.Controllers.TeacherInfoController;
 
 namespace Proffy.WebAPI
 {
