@@ -1,0 +1,93 @@
+.input-block-float {
+  position: relative;
+}
+
+.input-block-float + .input-block-float {
+  margin-top: 1.4rem;
+}
+
+.input-block-float input {
+  width: 100%;
+  height: 5.6rem;
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  background: var(--color-input-background);
+  border: 1px solid var(--color-line-in-white);
+  outline: 0;
+  padding: 0 1.6rem;
+  font: 1.6rem Archivo;
+}
+
+.input-block-float button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+.input-block-float label {
+  position: absolute;
+  top: 1.6rem;
+  line-height: 2.4rem;
+  top: 2.4rem;
+  left: 2.4rem;
+  transition: top 0.7s, font-size 0.7s;
+  color:#9C98A6
+}
+
+.input-block-float img {
+  position: absolute;
+  top: 45%;
+  left: 80%;
+  outline: transparent;
+}
+
+.input-block-float button {
+  position: absolute;
+  top: 39%;
+  left: 85%;
+  cursor: pointer;
+}
+
+.input-block-float input {
+  padding-top: 1.4rem;
+}
+
+.input-block-float::after {
+  width: calc(2.2rem);
+  width: 2px;
+  height: 0rem;
+  border-radius: 8px;
+  content: '';
+  background: var(--color-primary-light);
+  position: absolute;
+  bottom: 0.5rem;
+  left: -0rem;
+  transition: height 0.5s;
+}
+
+.input-block-float:focus-within::after {
+  width: calc(2.2rem);
+  width: 2px;
+  height: 4.2rem;
+  border-radius: 8px;
+  content: '';
+  background: var(--color-primary-light);
+  position: absolute;
+  bottom: 0.5rem;
+  left: -0rem;
+  transition: height 0.5s;
+}
+
+.input-block-float:focus-within label {
+  font-size: 1.2rem;
+  top: 1.4rem;
+  line-height: 2rem;
+  color:#C1BCCC
+}
+
+.input-block-float input:not([value='']) ~ label {
+  font-size: 1.2rem;
+  top: 1.4rem;
+  line-height: 2rem;  
+}

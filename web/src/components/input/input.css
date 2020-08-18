@@ -28,8 +28,8 @@
   content: '';
   background: var(--color-primary-light);
   position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
+  right: .5rem;
+  left: .5rem;
   bottom: 0;
 }
 

@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, useState } from 'react';
-import './input.css';
+import './input-float.css';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string,
@@ -7,21 +7,24 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: string
 }
 
-const Input: React.FC<InputProps> = ({ label, name, icon, ...rest }) => {
+const InputFloat: React.FC<InputProps> = ({ label, name, icon, ...rest }) => {
 
   const [inputValue, setInputValue] = useState('');
+  const [hiddenPassword, setHiddenPassword] = useState(false);
+
   return (
-    <div className="input-block">
-      <label htmlFor={name}>{label}</label>
+    <div className="input-block-float">
       <input
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        type="text"
+        type={hiddenPassword ? "password" : "text"}
         id={name}
         {...rest} />
-
+      <label htmlFor={name}>{label}</label>
       {icon &&
-        <button>
+        <button
+          onClick={(e) => setHiddenPassword(!hiddenPassword)}
+        >
           <img src={icon} alt="" />
         </button>
       }
@@ -29,4 +32,4 @@ const Input: React.FC<InputProps> = ({ label, name, icon, ...rest }) => {
   )
 };
 
-export default Input;
+export default InputFloat;
