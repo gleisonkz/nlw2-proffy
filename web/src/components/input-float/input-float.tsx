@@ -14,7 +14,7 @@ const InputFloat: React.FC<InputProps> = ({ label, name, icon, ...rest }) => {
 
   return (
     <div className="input-block-float"> 
-      <input
+      <input 
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         type={hiddenPassword ? "password" : "text"}
