@@ -28,6 +28,13 @@ namespace Proffy.WebAPI
                   options.UseSqlServer("Password=sa123456;Persist Security Info=True;User ID=sa;Initial Catalog=Proffy;Data Source=DESKTOP-2AKCSN7\\PROFFY");
               });
 
+            services.AddCors(c => c.AddPolicy("ProffyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             services.AddScoped<IFactoryRepository, FactoryEFCoreRepository>();
             services.AddScoped<IUnityOfWork, UnityOfWork>();
             services.AddScoped<ITeacherInfoService, TeacherInfoService>();
@@ -43,6 +50,7 @@ namespace Proffy.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("ProffyPolicy");
             app.UseMvc();
         }
     }
