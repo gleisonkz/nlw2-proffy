@@ -169,4 +169,5 @@ section {
 
 .login footer strong {
   color: var(--color-primary);
+  text-decoration: underline;
 }

@@ -3,10 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 import PageHeader from '../../components/page-header/page-header';
 import Input from '../../components/input/input';
-import Textarea from './../../components/text-area/text-area';
-import Select from './../../components/select/select';
+import Textarea from '../../components/text-area/text-area';
+import Select from '../../components/select/select';
 
-import api from './../../services/api';
+import api from '../../services/api';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
 

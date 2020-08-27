@@ -1,21 +1,24 @@
-import React, { useState, FormEvent } from 'react';
-
-import './styles.css';
+import { useState, FormEvent } from 'react';
+import React from 'react';
 
 import showPasswordIcon from '../../assets/images/icons/show-password.svg';
+import hidePasswordIcon from '../../assets/images/icons/hide-password.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
 import logoImg from '../../assets/images/logo.svg';
-import InputFloat from './../../components/input-float/input-float';
+import InputFloat, { ToggleIcon } from '../../components/input-float/input-float';
 
+import './styles.css';
 
 function Login() {
 
+  const toggleIconPassword: ToggleIcon = {
+    activeIcon: hidePasswordIcon,
+    inactiveIcon: showPasswordIcon
+  }
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-
-
 
   function handleCreateClass(e: FormEvent) {
     e.preventDefault();
@@ -45,7 +48,7 @@ function Login() {
             <InputFloat
               label={"Senha"}
               name={"password"}
-              icon={showPasswordIcon}
+              toggleIcon={toggleIconPassword}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
