@@ -105,6 +105,10 @@ section {
   color: red;
 }
 
+.login .checkbox-wrapper > input:hover {
+  cursor: pointer;
+}
+
 .login .help {
   margin-top: 2.4rem;
   display: flex;

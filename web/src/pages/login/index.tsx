@@ -1,12 +1,12 @@
-import { useState, FormEvent } from 'react';
 import React from 'react';
+import { useState, FormEvent } from 'react';
 
 import showPasswordIcon from '../../assets/images/icons/show-password.svg';
 import hidePasswordIcon from '../../assets/images/icons/hide-password.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
-import logoImg from '../../assets/images/logo.svg';
 import InputFloat, { ToggleIcon } from '../../components/input-float/input-float';
+import Slogan from '../../components/Slogan';
 
 import './styles.css';
 
@@ -26,12 +26,7 @@ function Login() {
 
   return (
     <section className="login">
-      <article className="slogan">
-        <div className="containerLogo">
-          <img src={logoImg} alt='Proffy' />
-          <h2>Sua plataforma de estudos online.</h2>
-        </div>
-      </article>
+      <Slogan />
       <article className="login-form">
         <form
           onSubmit={handleCreateClass}
