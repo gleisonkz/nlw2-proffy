@@ -1,10 +1,12 @@
 import React, { InputHTMLAttributes, useState, FormEvent } from 'react';
-import './input-float.css';
+
+import './styles.css';
 
 export interface ToggleIcon {
   activeIcon: string,
   inactiveIcon: string
 }
+
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string,
   label: string,

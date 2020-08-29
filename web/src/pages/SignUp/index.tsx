@@ -4,7 +4,7 @@ import showPasswordIcon from '../../assets/images/icons/show-password.svg';
 import hidePasswordIcon from '../../assets/images/icons/hide-password.svg';
 
 import Slogan from '../../components/Slogan';
-import InputFloat, { ToggleIcon } from '../../components/input-float/input-float';
+import InputFloat, { ToggleIcon } from '../../components/InputFloat';
 
 import './styles.css';
 

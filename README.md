@@ -1,32 +1,35 @@
-<img src="https://i.ibb.co/nnsJ3Wg/proffy.png" alt="proffy" border="0">
+<h1 align="center">
+  <img src=".github/logo.svg" alt="Logo" height="70">
 
-<p><strong>ATENÇÃO:</strong> em andamento...</p>
-<br/>
-
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/gleisonkz/proffy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/gleisonkz/proffy/context:javascript)
+  [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/gleisonkz/proffy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/gleisonkz/proffy/context:javascript)
 ![GitHub top language](https://img.shields.io/github/languages/top/gleisonkz/proffy)
 ![GitHub last commit](https://img.shields.io/github/last-commit/gleisonkz/proffy)
+</h1>
 
-## Sobre o projeto
-**Proffy** é uma plataforma de estudos online que tem objetivo conectar alunos e professores.
+<img src=".github/platforms-shapes.png" alt="proffy">
+
+<br/>
+
+## 📖 About the project
+
+This project was developed on the Next Level Week #02 event by [Rocketseat](https://rocketseat.com.br/) 🚀
+
+This application is designed to connect teachers and students. For teachers, it is possible to define the start and end time of classes, the hourly price and describe themselves. Studens can get in touch and choose favorites teachers.
 
 Essa aplicação está sendo desenvolvida durante a 2ª edição da <strong>Next Level Week</strong> distribuída pela [Rocketseat](https://rocketseat.com.br/).
 
-## Tecnologias
-O projeto está sendo construído utilizando as seguintes tecnologias:
-- Node
-- TypeScript
-- ReactJS
-- Banco de Dados sqlite3
+## 🤖 Technologies
 
+Technologies that I used to develop this application
 
-## Funcionalidades do back-end
-
-### Conexões
-[x] - Rota para listar total de conexões realizadas;<br/>
-[x] - Rota para criar uma nova conexão;
-
-### Aulas
-[x] - Rota para criar uma aula;<br/>
-[x] - Rota para listar aulas;<br/>
-[x]  - Filtrar por matéria, dia da semana e horário;
+- [Node.js](https://nodejs.org/en/)
+- [ReactJS](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Router DOM](https://reacttraining.com/react-router/)
+- [React Navigation](https://reactnavigation.org/)
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.io/)
+- [.NET Core Web API](https://dotnet.microsoft.com/download)
+- [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- [Entity Framework](https://docs.microsoft.com/en-us/ef/core/)
+- [SQL Server](https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15)

@@ -1,10 +1,10 @@
 import React, { useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import PageHeader from '../../components/page-header/page-header';
-import Input from '../../components/input/input';
-import Textarea from '../../components/text-area/text-area';
-import Select from '../../components/select/select';
+import PageHeader from '../../components/PageHeader';
+import Input from '../../components/Input';
+import TextArea from '../../components/TextArea';
+import Select from '../../components/Select';
 
 import api from '../../services/api';
 
@@ -96,7 +96,7 @@ function TeacherForm() {
                 setWhatsapp(e.target.value);
               }}
             />
-            <Textarea
+            <TextArea
               name='bio'
               label='Biografia'
               value={bio}

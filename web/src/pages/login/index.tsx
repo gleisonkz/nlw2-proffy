@@ -5,7 +5,7 @@ import showPasswordIcon from '../../assets/images/icons/show-password.svg';
 import hidePasswordIcon from '../../assets/images/icons/hide-password.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
-import InputFloat, { ToggleIcon } from '../../components/input-float/input-float';
+import InputFloat, { ToggleIcon } from '../../components/InputFloat';
 import Slogan from '../../components/Slogan';
 
 import './styles.css';
