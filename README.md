@@ -16,8 +16,6 @@ This project was developed on the Next Level Week #02 event by [Rocketseat](http
 
 This application is designed to connect teachers and students. For teachers, it is possible to define the start and end time of classes, the hourly price and describe themselves. Studens can get in touch and choose favorites teachers.
 
-Essa aplicação está sendo desenvolvida durante a 2ª edição da <strong>Next Level Week</strong> distribuída pela [Rocketseat](https://rocketseat.com.br/).
-
 ## 🤖 Technologies
 
 Technologies that I used to develop this application
