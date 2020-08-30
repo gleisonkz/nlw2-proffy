@@ -1,5 +1,5 @@
 .slogan {
-  background: url('../../assets/images/backgroundLogin.svg');
+  background: var(--color-primary) url('../../assets/images/backgroundLogin.svg');
   background-size: 480px 584px;
   background-repeat: no-repeat;
   background-position: center;

@@ -10,6 +10,7 @@ import Slogan from '../../components/Slogan';
 
 import './styles.css';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Login() {
   const [fadeState, setFadeState] = useState("hidden");
@@ -26,7 +27,9 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleCreateClass(e: FormEvent) {
+  const history = useHistory();
+  function handleLogin(e: FormEvent) {
+    history.push("/home")
     e.preventDefault();
   }
 
@@ -35,7 +38,7 @@ function Login() {
       <Slogan />
       <article className="login-form">
         <form
-          onSubmit={handleCreateClass}
+          onSubmit={handleLogin}
           action=""
         >
           <header>Fazer Login</header>
@@ -58,9 +61,9 @@ function Login() {
                 <input type="checkbox" />
                 <span>Lembrar-me</span>
               </div>
-              <div>
+              <Link to="/users/lost-password">
                 <span>Esqueci minha senha</span>
-              </div>
+              </Link>
             </div>
           </main>
           <button
@@ -71,7 +74,7 @@ function Login() {
           <footer>
             <p>
               Não tem conta?
-            <Link to='/users/sign-up'>
+               <Link to='/users/sign-up'>
                 <strong>Cadastre-se</strong>
               </Link>
             </p>

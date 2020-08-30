@@ -1,4 +1,4 @@
-.sign-up-done {
+.confirmation-message {
   background: url('../../assets/images/backgroundLoginDone.svg');
   background-size: 1119px 561px;
   width: 100%;
@@ -10,11 +10,11 @@
   background-color: var(--color-primary);
 }
 
-.sign-up-done > img {
+.confirmation-message > img {
   padding-top: 21.8rem;
 }
 
-.sign-up-done > h1 {
+.confirmation-message > h1 {
   padding-top: 5.5rem;
   font-family: Archivo;
   font-style: normal;
@@ -25,16 +25,16 @@
   color: var(--color-title-in-primary);
 }
 
-.sign-up-done article {
+.confirmation-message article {
   margin-top: 2.4rem;
 }
 
-.sign-up-done > article > p {
+.confirmation-message > article > p {
   color: var(--color-text-in-primary);
   text-align: center;
 }
 
-.sign-up-done > a {
+.confirmation-message > a {
   margin-top: 8rem;
   width: 197px;
   height: 56px;
@@ -49,6 +49,6 @@
   transition: background-color 0.3s;
 }
 
-.sign-up-done > a:hover {
+.confirmation-message > a:hover {
   background-color: var(--color-secondary-dark);
 }

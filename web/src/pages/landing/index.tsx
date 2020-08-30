@@ -52,7 +52,7 @@ function Landing() {
             Dar Aulas
           </Link>
 
-          <Link to='/users/sign-in'>
+          <Link to='/users/lost-password'>
             Login
           </Link>
         </div>

@@ -71,6 +71,10 @@
   display: flex;
 }
 
+.login .help a {
+  text-decoration: none;
+}
+
 .login .checkbox-wrapper {
   display: flex;
   align-items: center;

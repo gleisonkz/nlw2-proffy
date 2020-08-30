@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import showPasswordIcon from '../../assets/images/icons/show-password.svg';
 import hidePasswordIcon from '../../assets/images/icons/hide-password.svg';
 
 import Slogan from '../../components/Slogan';
 import InputFloat, { ToggleIcon } from '../../components/InputFloat';
+import BackButton from "../../components/BackButton";
 
 import './styles.css';
-import BackButton from "../../components/BackButton";
-import { useHistory } from "react-router-dom";
 
 
 const SignUp: React.FC = () => {
@@ -16,15 +16,14 @@ const SignUp: React.FC = () => {
 
   useEffect(() => {
     setFadeState("visible")
-  }, []);
-
-  const history = useHistory();
+  }, []); 
 
   const toggleIconPassword: ToggleIcon = {
     activeIcon: hidePasswordIcon,
     inactiveIcon: showPasswordIcon
   }
-
+  
+  const history = useHistory();
   const postSignUp = () => {
     history.push("/users/sign-in-done")
   }
