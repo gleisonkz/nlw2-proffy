@@ -6,14 +6,13 @@ import Input from '../../components/Input';
 import TextArea from '../../components/TextArea';
 import Select from '../../components/Select';
 
-import api from '../../services/api';
-
 import warningIcon from '../../assets/images/icons/warning.svg';
+
+import api from '../../services/api';
 
 import './styles.css';
 
-
-function TeacherForm() {
+const TeacherForm: React.FC = () => {
   const [fadeState, setFadeState] = useState("hidden");
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import Landing from './pages/Landing/index';
+import Home from './pages/Home/index';
 import TeacherList from './pages/TeacherList/index';
 import TeacherForm from './pages/TeacherForm/index';
 import Login from './pages/Login/index';
@@ -19,7 +19,7 @@ function Routes() {
             <Route path="/users/sign-up" exact component={SignUp} />
             <Route path="/users/sign-in-done" exact component={SignUpDone} />
             <Route path="/users/sign-in" exact component={Login} />
-            <Route path="/home" exact component={Landing} />
+            <Route path="/home" exact component={Home} />
             <Route path="/study" component={TeacherList} />
             <Route path="/give-classes" component={TeacherForm} />
         </BrowserRouter>

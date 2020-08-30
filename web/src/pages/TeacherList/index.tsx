@@ -5,10 +5,11 @@ import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 
-import './styles.css';
 import api from '../../services/api';
 
-function TeacherList() {
+import './styles.css';
+
+const TeacherList: React.FC = () => {
   const [fadeState, setFadeState] = useState("hidden");
 
   useEffect(() => {

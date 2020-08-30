@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState, FormEvent } from 'react';
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import showPasswordIcon from '../../assets/images/icons/show-password.svg';
 import hidePasswordIcon from '../../assets/images/icons/hide-password.svg';
@@ -9,10 +11,8 @@ import InputFloat, { ToggleIcon } from '../../components/InputFloat';
 import Slogan from '../../components/Slogan';
 
 import './styles.css';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
-function Login() {
+const Login: React.FC = () => {
   const [fadeState, setFadeState] = useState("hidden");
 
   useEffect(() => {
