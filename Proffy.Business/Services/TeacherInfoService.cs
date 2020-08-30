@@ -72,7 +72,7 @@ namespace Proffy.Business.Services
 
         public Teacher CreateTeacher<T>(ITeacherInfoDTO<T> teacherInfoDTO) where T : ILessonScheduleDTO
         {
-            var teacher = new Teacher()
+            var teacher = new Teacher
             {
                 Name = teacherInfoDTO.Name,
                 Avatar = teacherInfoDTO.Avatar,
@@ -97,7 +97,7 @@ namespace Proffy.Business.Services
         }
         private Lesson CreateLesson(ILessonDTO lessonDTO)
         {
-            var objLesson = new Lesson()
+            var objLesson = new Lesson
             {
                 Subject = lessonDTO.Subject,
                 Cost = lessonDTO.Cost,
@@ -106,7 +106,7 @@ namespace Proffy.Business.Services
         }
         private LessonSchedule CreateLessonSchedule(ILessonScheduleDTO LessonScheduleItem)
         {
-            var lessonSchedule = new LessonSchedule()
+            var lessonSchedule = new LessonSchedule
             {
                 To = Utils.ConvertHourToMinutes(LessonScheduleItem.To),
                 From = Utils.ConvertHourToMinutes(LessonScheduleItem.From),

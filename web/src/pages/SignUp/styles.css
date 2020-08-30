@@ -26,10 +26,7 @@
 }
 
 .sign-up .form header span {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 36px;
+  font: 600 Poppins normal 3.6rem;
   line-height: 36px;
   color: #32264d;
   margin-bottom: 4rem;

@@ -30,7 +30,7 @@ namespace Proffy.Business.Services
 
         public Connection CreateConnection(IConnectionDTO connectionDTO)
         {
-            var objConection = new Connection()
+            var objConection = new Connection
             {
                 TeacherID = connectionDTO.TeacherID,
                 CreatedAt = DateTime.Now
