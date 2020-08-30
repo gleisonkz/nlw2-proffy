@@ -1,9 +1,11 @@
 <h1 align="center">
   <img src=".github/logo.svg" alt="Logo" height="70">
 
-  [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/gleisonkz/proffy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/gleisonkz/proffy/context:javascript)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/gleisonkz/proffy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/gleisonkz/proffy/context:javascript)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8c3fe8c4ab944bfd8805283727e64751)](https://www.codacy.com/manual/gleisonkz/proffy?utm_source=github.com&utm_medium=referral&utm_content=gleisonkz/proffy&utm_campaign=Badge_Grade)
 ![GitHub top language](https://img.shields.io/github/languages/top/gleisonkz/proffy)
 ![GitHub last commit](https://img.shields.io/github/last-commit/gleisonkz/proffy)
+
 </h1>
 
 <img src=".github/platforms-shapes.png" alt="proffy">
