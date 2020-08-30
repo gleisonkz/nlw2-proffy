@@ -10,15 +10,17 @@ import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
 import api from '../../services/api';
+
 import './styles.css';
-
-
 
 
 function Landing() {
   const [totalConnections, setTotalConnections] = useState(0);
 
+  const [fadeState, setFadeState] = useState("hidden");
+
   useEffect(() => {
+    setFadeState("visible")
     api.get('connections').then((response) => {
       const { total } = response.data;
       setTotalConnections(total);
@@ -26,7 +28,7 @@ function Landing() {
   }, []);
 
   return (
-    <div id='page-landing'>
+    <div id='page-landing' className={`${fadeState}`}>
       <div id='page-landing-content' className='container'>
         <div className='logo-container'>
           <img src={logoImg} alt='Proffy' />
@@ -48,6 +50,10 @@ function Landing() {
           <Link to='/give-classes' className='give-classes'>
             <img src={giveClassesIcon} alt='Dar Aulas' />
             Dar Aulas
+          </Link>
+
+          <Link to='/users/sign-in'>
+            Login
           </Link>
         </div>
 

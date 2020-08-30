@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
@@ -9,7 +9,13 @@ import './styles.css';
 import api from '../../services/api';
 
 function TeacherList() {
-  const [teachers, setTeachers] = useState<Teacher[]>([]);  
+  const [fadeState, setFadeState] = useState("hidden");
+
+  useEffect(() => {
+    setFadeState("visible")
+  }, []);
+
+  const [teachers, setTeachers] = useState<Teacher[]>([]);
 
   const [subject, setSubject] = useState('');
   const [week_day, setWeekDay] = useState('');
@@ -31,7 +37,7 @@ function TeacherList() {
 
 
   return (
-    <div id='page-teacher-list' className='container'>
+    <div id='page-teacher-list' className={`container ${fadeState}`}>
       <PageHeader title='Estes são os proffys disponíveis.'>
         <form id='search-teachers' onSubmit={searchTeachers}>
           <Select

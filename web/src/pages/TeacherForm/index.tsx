@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import PageHeader from '../../components/PageHeader';
@@ -14,6 +14,11 @@ import './styles.css';
 
 
 function TeacherForm() {
+  const [fadeState, setFadeState] = useState("hidden");
+
+  useEffect(() => {
+    setFadeState("visible")
+  }, []);
 
   const history = useHistory();
 
@@ -62,7 +67,7 @@ function TeacherForm() {
   }
 
   return (
-    <div id='page-teacher-form' className='container'>
+    <div id='page-teacher-form' className={`container ${fadeState}`}>
       <PageHeader
         title='Que incrível que você quer dar aulas.'
         description='O primeiro passo é preencher esse formulário de inscrição'

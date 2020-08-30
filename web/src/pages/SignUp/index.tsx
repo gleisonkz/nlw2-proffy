@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import showPasswordIcon from '../../assets/images/icons/show-password.svg';
 import hidePasswordIcon from '../../assets/images/icons/hide-password.svg';
@@ -7,14 +7,28 @@ import Slogan from '../../components/Slogan';
 import InputFloat, { ToggleIcon } from '../../components/InputFloat';
 
 import './styles.css';
+import BackButton from "../../components/BackButton";
+import { useHistory } from "react-router-dom";
+
 
 const SignUp: React.FC = () => {
+  const [fadeState, setFadeState] = useState("hidden");
+
+  useEffect(() => {
+    setFadeState("visible")
+  }, []);
+
+  const history = useHistory();
 
   const toggleIconPassword: ToggleIcon = {
     activeIcon: hidePasswordIcon,
     inactiveIcon: showPasswordIcon
   }
-  
+
+  const postSignUp = () => {
+    history.push("/users/sign-in-done")
+  }
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nome, setNome] = useState('');
@@ -22,13 +36,17 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-      <section>
+      <section className={`sign-up ${fadeState}`}>
         <article className="form">
+          <div className="back-button">
+            <BackButton routeTo="/users/sign-in" />
+          </div>
           <form
-            // onSubmit={""}
+            onSubmit={postSignUp}
             action=""
           >
             <header>
+
               <span>Cadastro</span>
               <p>Preencha os dados abaixo para começar</p>
             </header>
@@ -60,10 +78,8 @@ const SignUp: React.FC = () => {
               />
             </main>
             <button
-              // disabled={!(password && email)}
-              type='submit'
             >Concluir Cadastro
-        </button>
+            </button>
           </form>
         </article>
         <Slogan />

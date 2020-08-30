@@ -1,0 +1,54 @@
+.sign-up-done {
+  background: url('../../assets/images/backgroundLoginDone.svg');
+  background-size: 1119px 561px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-primary);
+}
+
+.sign-up-done > img {
+  padding-top: 21.8rem;
+}
+
+.sign-up-done > h1 {
+  padding-top: 5.5rem;
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 54px;
+  line-height: 42px;
+  text-align: center;
+  color: var(--color-title-in-primary);
+}
+
+.sign-up-done article {
+  margin-top: 2.4rem;
+}
+
+.sign-up-done > article > p {
+  color: var(--color-text-in-primary);
+  text-align: center;
+}
+
+.sign-up-done > a {
+  margin-top: 8rem;
+  width: 197px;
+  height: 56px;
+  border-radius: 8px;
+  background-color: var(--color-secondary);
+  text-decoration: none;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-title-in-primary);
+  transition: background-color 0.3s;
+}
+
+.sign-up-done > a:hover {
+  background-color: var(--color-secondary-dark);
+}

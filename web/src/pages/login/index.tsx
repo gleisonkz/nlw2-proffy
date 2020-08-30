@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState, FormEvent } from 'react';
 
 import showPasswordIcon from '../../assets/images/icons/show-password.svg';
@@ -9,8 +9,14 @@ import InputFloat, { ToggleIcon } from '../../components/InputFloat';
 import Slogan from '../../components/Slogan';
 
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
+  const [fadeState, setFadeState] = useState("hidden");
+
+  useEffect(() => {
+    setFadeState("visible")
+  }, []);
 
   const toggleIconPassword: ToggleIcon = {
     activeIcon: hidePasswordIcon,
@@ -25,7 +31,7 @@ function Login() {
   }
 
   return (
-    <section className="login">
+    <section className={`login ${fadeState}`}>
       <Slogan />
       <article className="login-form">
         <form
@@ -63,7 +69,12 @@ function Login() {
           >Entrar
           </button>
           <footer>
-            <p>Não tem conta? <strong>Cadastre-se</strong></p>
+            <p>
+              Não tem conta?
+            <Link to='/users/sign-up'>
+                <strong>Cadastre-se</strong>
+              </Link>
+            </p>
             <p>É de graça
             <img src={purpleHeartIcon} alt="" />
             </p>
