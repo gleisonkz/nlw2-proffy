@@ -13,7 +13,7 @@
 .text-area-block textarea {
   width: 100%;
   height: 16rem;
-  min-height: 8rem ;
+  min-height: 8rem;
   margin-top: 0.8rem;
   border-radius: 0.8rem;
   background: var(--color-input-background);
@@ -21,7 +21,7 @@
   outline: 0;
   resize: vertical;
   padding: 1.2rem 1.6rem;
-  font: 1.6rem Archivo;
+  font: 1.6rem Archivo 700;
 }
 
 .text-area-block:focus-within::after {
