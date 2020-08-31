@@ -28,8 +28,8 @@
   margin-top: 3.2rem;
 }
 
-#search-teachers button:hover{
-    background: var(--color-secondary-dark);
+#search-teachers button:hover {
+  background: var(--color-secondary-dark);
 }
 
 #page-teacher-list main {

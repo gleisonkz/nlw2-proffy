@@ -13,23 +13,23 @@ import Slogan from '../../components/Slogan';
 import './styles.css';
 
 const Login: React.FC = () => {
-  const [fadeState, setFadeState] = useState("hidden");
+  const [fadeState, setFadeState] = useState('hidden');
 
   useEffect(() => {
-    setFadeState("visible")
+    setFadeState('visible');
   }, []);
 
   const toggleIconPassword: ToggleIcon = {
     activeIcon: hidePasswordIcon,
-    inactiveIcon: showPasswordIcon
-  }
+    inactiveIcon: showPasswordIcon,
+  };
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const history = useHistory();
   function handleLogin(e: FormEvent) {
-    history.push("/home")
+    history.push('/home');
     e.preventDefault();
   }
 
@@ -37,21 +37,18 @@ const Login: React.FC = () => {
     <section className={`login ${fadeState}`}>
       <Slogan />
       <article className="login-form">
-        <form
-          onSubmit={handleLogin}
-          action=""
-        >
+        <form onSubmit={handleLogin} action="">
           <header>Fazer Login</header>
           <main>
             <InputFloat
-              label={"E-mail"}
-              name={"email"}
+              label={'E-mail'}
+              name={'email'}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <InputFloat
-              label={"Senha"}
-              name={"password"}
+              label={'Senha'}
+              name={'password'}
               toggleIcon={toggleIconPassword}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -66,25 +63,24 @@ const Login: React.FC = () => {
               </Link>
             </div>
           </main>
-          <button
-            disabled={!(password && email)}
-            type='submit'
-          >Entrar
+          <button disabled={!(password && email)} type="submit">
+            Entrar
           </button>
           <footer>
             <p>
               Não tem conta?
-               <Link to='/users/sign-up'>
+              <Link to="/users/sign-up">
                 <strong>Cadastre-se</strong>
               </Link>
             </p>
-            <p>É de graça
-            <img src={purpleHeartIcon} alt="" />
+            <p>
+              É de graça
+              <img src={purpleHeartIcon} alt="" />
             </p>
           </footer>
         </form>
       </article>
     </section>
   );
-}
+};
 export default Login;

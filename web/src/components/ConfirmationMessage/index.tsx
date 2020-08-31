@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import doneIcon from "../../assets/images/icons/done.svg"
+import doneIcon from '../../assets/images/icons/done.svg';
 
 import './styles.css';
 
 interface ConfirmationMessageProps {
-  title: string,
-  firstDescription: string
-  secondDescription?: string
-  buttonText: string
-  buttonLink: string
+  title: string;
+  firstDescription: string;
+  secondDescription?: string;
+  buttonText: string;
+  buttonLink: string;
 }
 
 const ConfirmationMessage: React.FC<ConfirmationMessageProps> = ({
@@ -18,12 +18,12 @@ const ConfirmationMessage: React.FC<ConfirmationMessageProps> = ({
   firstDescription,
   secondDescription,
   buttonText,
-  buttonLink }) => {
-
-  const [fadeState, setFadeState] = useState("hidden");
+  buttonLink,
+}) => {
+  const [fadeState, setFadeState] = useState('hidden');
 
   useEffect(() => {
-    setFadeState("visible")
+    setFadeState('visible');
   }, []);
 
   return (
@@ -37,9 +37,7 @@ const ConfirmationMessage: React.FC<ConfirmationMessageProps> = ({
             <p>{secondDescription}</p>
           </article>
 
-          <Link to={buttonLink}>
-            {buttonText}
-          </Link>
+          <Link to={buttonLink}>{buttonText}</Link>
         </section>
       </>
     </>

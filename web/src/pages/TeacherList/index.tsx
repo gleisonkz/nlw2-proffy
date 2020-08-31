@@ -10,42 +10,43 @@ import api from '../../services/api';
 import './styles.css';
 
 const TeacherList: React.FC = () => {
-  const [fadeState, setFadeState] = useState("hidden");
+  const [fadeState, setFadeState] = useState('hidden');
+  const [isSearched, setIsSearched] = useState(false);
 
   useEffect(() => {
-    setFadeState("visible")
+    setFadeState('visible');
   }, []);
 
   const [teachers, setTeachers] = useState<Teacher[]>([]);
 
   const [subject, setSubject] = useState('');
-  const [week_day, setWeekDay] = useState('');
+  const [weekDay, setWeekDay] = useState('');
   const [time, setTime] = useState('');
 
   async function searchTeachers(e: FormEvent) {
     e.preventDefault();
+    setIsSearched(true);
 
-    const response = await api.get<Teacher[]>('classes', {
+    const response = await api.get<Teacher[]>('teacherinfo', {
       params: {
         subject,
-        week_day,
-        time
-      }
+        weekDay,
+        time,
+      },
     });
 
     setTeachers(response.data);
   }
 
-
   return (
-    <div id='page-teacher-list' className={`container ${fadeState}`}>
-      <PageHeader title='Estes são os proffys disponíveis.'>
-        <form id='search-teachers' onSubmit={searchTeachers}>
+    <div id="page-teacher-list" className={`container ${fadeState}`}>
+      <PageHeader title="Estes são os proffys disponíveis.">
+        <form id="search-teachers" onSubmit={searchTeachers}>
           <Select
-            name='subject'
-            label='Matéria'
+            name="subject"
+            label="Matéria"
             value={subject}
-            onChange={e => setSubject(e.target.value)}
+            onChange={(e) => setSubject(e.target.value)}
             options={[
               { value: 'Artes', label: 'Artes' },
               { value: 'Biologia', label: 'Biologia' },
@@ -56,14 +57,14 @@ const TeacherList: React.FC = () => {
               { value: 'História', label: 'História' },
               { value: 'Matemática', label: 'Matemática' },
               { value: 'Português', label: 'Português' },
-              { value: 'Química', label: 'Química' }
+              { value: 'Química', label: 'Química' },
             ]}
           />
           <Select
-            name='week-day'
-            label='Dia da semana'
-            value={week_day}
-            onChange={e => setWeekDay(e.target.value)}
+            name="week-day"
+            label="Dia da semana"
+            value={weekDay}
+            onChange={(e) => setWeekDay(e.target.value)}
             options={[
               { value: '0', label: 'Domingo' },
               { value: '1', label: 'Segunda-feira' },
@@ -71,34 +72,32 @@ const TeacherList: React.FC = () => {
               { value: '3', label: 'Quarta-feira' },
               { value: '4', label: 'Quinta-feira' },
               { value: '5', label: 'Sexta-feira' },
-              { value: '6', label: 'Sábado' }
+              { value: '6', label: 'Sábado' },
             ]}
           />
 
           <Input
-            type='time'
-            label='Hora'
+            type="time"
+            label="Hora"
             value={time}
-            onChange={e => {
-              setTime(e.target.value)
+            onChange={(e) => {
+              setTime(e.target.value);
             }}
-            name='time' />
+            name="time"
+          />
 
-          <button type="submit">
-            Buscar
-          </button>
+          <button type="submit">Buscar</button>
         </form>
       </PageHeader>
 
       <main>
-        {
-          teachers.map((teacher) => {
-            return <TeacherItem key={teacher.id} teacher={teacher} />
-          })
-        }
+        {teachers.map((teacher: Teacher) => {
+          return <TeacherItem key={teacher.id} teacher={teacher} />;
+        })}
+        {isSearched && teachers.length === 0 && <p>Teste</p>}
       </main>
     </div>
   );
-}
+};
 
 export default TeacherList;

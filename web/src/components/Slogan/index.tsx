@@ -9,7 +9,7 @@ const Slogan: React.FC = () => {
     <>
       <article className="slogan">
         <div>
-          <img src={logoImg} alt='Proffy' />
+          <img src={logoImg} alt="Proffy" />
           <h2>Sua plataforma de estudos online.</h2>
         </div>
       </article>

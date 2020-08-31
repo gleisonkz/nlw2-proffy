@@ -1,6 +1,6 @@
 import React from 'react';
 import BackButton from '../BackButton';
-import logoImg from '../../assets/images/logo.svg'
+import logoImg from '../../assets/images/logo.svg';
 
 import './styles.css';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => (
   <header className="page-header">
     <div className="top-bar-container">
       <BackButton routeTo="/home" />
-      <Link to={"/home"}>
+      <Link to={'/home'}>
         <img src={logoImg} alt="Proffy" />
       </Link>
     </div>
