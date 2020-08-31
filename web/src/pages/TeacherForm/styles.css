@@ -42,7 +42,7 @@
   background: none;
   border: 0;
   color: var(--color-primary);
-  font: 700 1.6rem Archivo;
+  font: 700 1.6rem Archivo, sans-serif;
   cursor: pointer;
   transition: color 0.2s;
 }
