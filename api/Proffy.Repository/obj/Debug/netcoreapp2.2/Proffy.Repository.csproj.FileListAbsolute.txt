@@ -1,9 +1,0 @@
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\bin\Debug\netcoreapp2.2\Proffy.Repository.deps.json
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\bin\Debug\netcoreapp2.2\Proffy.Repository.dll
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\bin\Debug\netcoreapp2.2\Proffy.Repository.pdb
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.csprojAssemblyReference.cache
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.AssemblyInfoInputs.cache
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.AssemblyInfo.cs
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.csproj.CoreCompileInputs.cache
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.dll
-D:\Gleison\Developing\Projects\React\proffy\Proffy.Repository\obj\Debug\netcoreapp2.2\Proffy.Repository.pdb

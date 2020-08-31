@@ -6,17 +6,17 @@
 /server/node_modules
 
 
-/Proffy.WebAPI/bin
-/Proffy.WebAPI/obj
+/api/Proffy.WebAPI/bin
+/api/Proffy.WebAPI/obj
 
-/Proffy.RepositoryEF/bin
-/Proffy.RepositoryEF/obj
+/api/Proffy.RepositoryEF/bin
+/api/Proffy.RepositoryEF/obj
 
-/Proffy.Repository/bin
-/Proffy.Repository/obj
+/api/Proffy.Repository/bin
+/api/Proffy.Repository/obj
 
-/Proffy.Business/bin
-/Proffy.Business/obj
+/api/Proffy.Business/bin
+/api/Proffy.Business/obj
 
 /.pnp
 .pnp.js
