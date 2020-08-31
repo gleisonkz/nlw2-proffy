@@ -13,7 +13,7 @@
   border-top: 0px;
   outline: 0;
   padding: 0 1.6rem;
-  font: 1.6rem Archivo;
+  font: 1.6rem Archivo, sans-serif;
 }
 
 .input-block-float button {
@@ -29,7 +29,7 @@
   top: 1.9rem;
   left: 2.4rem;
   transition: top 0.7s, font-size 0.7s;
-  color:#9C98A6
+  color: #9c98a6;
 }
 
 .input-block-float img {
@@ -80,11 +80,11 @@
   font-size: 1.2rem;
   top: 0.6rem;
   line-height: 2rem;
-  color:#C1BCCC
+  color: #c1bccc;
 }
 
 .input-block-float input:not([value='']) ~ label {
   font-size: 1.2rem;
   top: 0.6rem;
-  line-height: 2rem;  
+  line-height: 2rem;
 }

@@ -23,7 +23,7 @@
 }
 
 .teacher-item header div strong {
-  font: 700 2.4rem Archivo;
+  font: 700 2.4rem Archivo, sans-serif;
   display: block;
   color: var(--color-text-title);
 }
@@ -64,7 +64,7 @@
   border: 0;
   border-radius: 0.8rem;
   cursor: pointer;
-  font: 700 1.4rem Archivo;
+  font: 700 1.4rem Archivo, sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
