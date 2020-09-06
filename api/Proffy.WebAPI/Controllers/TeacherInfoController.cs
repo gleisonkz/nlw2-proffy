@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Internal;
+using Proffy.Business.POCO;
 using Proffy.Business.Services;
 using Proffy.WebAPI.DTO;
 using System;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Proffy.WebAPI.Controllers
 {
@@ -20,13 +22,37 @@ namespace Proffy.WebAPI.Controllers
 
         [HttpGet]
         public IActionResult Get([FromQuery] LessonFilterDTO filter)
-        {            
-            var time = Utils.ConvertHourToMinutes(filter.Time);
+        {
+            var time = 0;
+            if (filter.Time != null)
+                time = Utils.ConvertHourToMinutes(filter.Time);
+
+            Expression<Func<Lesson, bool>> predicate = c => true;
+
+            if (!string.IsNullOrEmpty(filter.Subject))
+                predicate = predicate.And(c => c.Subject == filter.Subject);
+
+            if (filter.WeekDay != 0)
+                predicate = predicate.And(c => c.LessonSchedule.Any(d => d.WeekDay == filter.WeekDay));
+
+            if (time != 0)
+                predicate = predicate.And(c => c.LessonSchedule.Any(d => d.From <= time && d.To > time));
+
+
+
+
+            //if (string.IsNullOrEmpty(filter.Subject) && filter.WeekDay == 0 && time == 0)
+            //    predicate = predicate.And(c => true);
+
+
+            //            .Where(c => c.Subject == filter.Subject &&
+            //            c.LessonSchedule.Any(d => d.WeekDay == filter.WeekDay) &&
+            //            c.LessonSchedule.Any(d => d.From <= time && d.To > time)
+            //)
+
+
             var teachers = svcTeacherInfo.GetLessons()
-                .Where(c => c.Subject == filter.Subject &&
-                            c.LessonSchedule.Any(d => d.WeekDay == filter.WeekDay) &&
-                            c.LessonSchedule.Any(d => d.From <= time && d.To > time)
-                )
+                .Where(predicate)
                 .Select(c => new
                 {
                     c.TeacherID,

@@ -36,6 +36,7 @@
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.BrowserLink": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
+          "PredicateBuilder": "1.0.0",
           "Proffy.Business": "1.0.0",
           "Proffy.Repository": "1.0.0",
           "Proffy.RepositoryEF": "1.0.0"
@@ -297,6 +298,20 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "PredicateBuilder/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/PredicateBuilder.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.0/PredicateBuilder.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -484,6 +499,7 @@
       },
       "Proffy.Business/1.0.0": {
         "dependencies": {
+          "PredicateBuilder": "1.0.0",
           "Proffy.Repository": "1.0.0"
         },
         "runtime": {
@@ -494,6 +510,9 @@
         }
       },
       "Proffy.Repository/1.0.0": {
+        "dependencies": {
+          "PredicateBuilder": "1.0.0"
+        },
         "runtime": {
           "Proffy.Repository.dll": {}
         },
@@ -506,6 +525,7 @@
           "Microsoft.EntityFrameworkCore": "2.2.2",
           "Microsoft.EntityFrameworkCore.Design": "2.2.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
+          "PredicateBuilder": "1.0.0",
           "Proffy.Business": "1.0.0",
           "Proffy.Repository": "1.0.0"
         },
@@ -3749,6 +3769,13 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "PredicateBuilder/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LRmXTr9wMBnc8C0j+D3nRb4SwxgW4aW03NGJ/YBb+WWDFdGNnI4tym3ZXWZi1Bc09t4dfSFIG1R5akFI3aKVgQ==",
+      "path": "predicatebuilder/1.0.0",
+      "hashPath": "predicatebuilder.1.0.0.nupkg.sha512"
     },
     "Remotion.Linq/2.2.0": {
       "type": "package",

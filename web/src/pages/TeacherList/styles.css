@@ -44,6 +44,23 @@ button[type='submit']:focus {
 #page-teacher-list main {
   margin: 3.2rem auto;
   width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+#page-teacher-list main > p {
+  width: 247px;
+  height: 52px;
+
+  margin-top: 12rem;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #9c98a6;
 }
 
 @media (min-width: 700px) {
