@@ -94,7 +94,9 @@ const TeacherList: React.FC = () => {
         {teachers.map((teacher: Teacher) => {
           return <TeacherItem key={teacher.id} teacher={teacher} />;
         })}
-        {isSearched && teachers.length === 0 && <p>Teste</p>}
+        {isSearched && teachers.length === 0 && (
+          <p>Nenhum professor encontrado com sua pesquisa.</p>
+        )}
       </main>
     </div>
   );

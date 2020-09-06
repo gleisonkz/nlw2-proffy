@@ -24,15 +24,28 @@
   font: 1.6rem Archivo 700, sans-serif;
 }
 
-.text-area-block:focus-within::after {
-  width: calc(100% - 3.2rem);
+.text-area-block::after,
+.text-area-block::before {
+  width: 0%;
   height: 2px;
   content: '';
-  background: var(--color-primary-light);
+  background-color: var(--color-primary-light);
   position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
-  bottom: 7px;
+  right: 0.5rem;
+  left: 0.5rem;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.text-area-block::after {
+  left: auto;
+  right: 0;
+}
+
+.text-area-block:focus-within::after,
+.text-area-block:focus-within::before {
+  width: 50%;
+  transition: 0.4s;
 }
 
 @media (min-width: 700px) {

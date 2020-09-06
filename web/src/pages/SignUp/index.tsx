@@ -24,7 +24,7 @@ const SignUp: React.FC = () => {
 
   const history = useHistory();
   const postSignUp = () => {
-    history.push('/users/sign-in-done');
+    history.push('/users/sign-up-done');
   };
 
   const [email, setEmail] = useState('');

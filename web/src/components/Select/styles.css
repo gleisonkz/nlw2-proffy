@@ -22,15 +22,28 @@
   font: 1.6rem Archivo, sans-serif;
 }
 
-.select-block:focus-within::after {
-  width: calc(100% - 3.2rem);
+.select-block::after,
+.select-block::before {
+  width: 0%;
   height: 2px;
   content: '';
-  background: var(--color-primary-light);
+  background-color: var(--color-primary-light);
   position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
+  right: 0.5rem;
+  left: 0.5rem;
   bottom: 0;
+  transition: 0.4s;
+}
+
+.select-block::after {
+  left: auto;
+  right: 0;
+}
+
+.select-block:focus-within::after,
+.select-block:focus-within::before {
+  width: 50%;
+  transition: 0.4s;
 }
 
 @media (min-width: 700px) {
