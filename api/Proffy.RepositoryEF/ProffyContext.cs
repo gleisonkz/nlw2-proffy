@@ -10,5 +10,6 @@ namespace Proffy.RepositoryEF
         public DbSet<Lesson> Lesson { get; set; }
         public DbSet<LessonSchedule> LessonSchedule { get; set; }
         public DbSet<Connection> Connection { get; set; }
+        public DbSet<TeacherLesson> TeacherLesson { get; set; }
     }
 }

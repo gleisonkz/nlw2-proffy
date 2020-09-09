@@ -27,10 +27,10 @@ namespace Proffy.WebAPI.Controllers
             if (filter.Time != null)
                 time = Utils.ConvertHourToMinutes(filter.Time);
 
-            Expression<Func<Lesson, bool>> predicate = c => true;
+            Expression<Func<TeacherLesson, bool>> predicate = c => true;
 
             if (!string.IsNullOrEmpty(filter.Subject))
-                predicate = predicate.And(c => c.Subject == filter.Subject);
+                predicate = predicate.And(c => c.Lesson.Subject == filter.Subject);
 
             if (filter.WeekDay != 0)
                 predicate = predicate.And(c => c.LessonSchedule.Any(d => d.WeekDay == filter.WeekDay));
@@ -38,33 +38,19 @@ namespace Proffy.WebAPI.Controllers
             if (time != 0)
                 predicate = predicate.And(c => c.LessonSchedule.Any(d => d.From <= time && d.To > time));
 
-
-
-
-            //if (string.IsNullOrEmpty(filter.Subject) && filter.WeekDay == 0 && time == 0)
-            //    predicate = predicate.And(c => true);
-
-
-            //            .Where(c => c.Subject == filter.Subject &&
-            //            c.LessonSchedule.Any(d => d.WeekDay == filter.WeekDay) &&
-            //            c.LessonSchedule.Any(d => d.From <= time && d.To > time)
-            //)
-
-
-            var teachers = svcTeacherInfo.GetLessons()
+            var teachers = svcTeacherInfo.GetTeacherLesson()
                 .Where(predicate)
                 .Select(c => new
                 {
                     c.TeacherID,
-                    c.Subject,
+                    c.Lesson.Subject,
                     c.Cost,
                     c.Teacher.Name,
                     c.Teacher.Avatar,
                     c.Teacher.WhatsApp,
                     c.Teacher.Bio
                 })
-                .ToList();
-
+                .ToList();            
             return Ok(teachers);
         }
 
@@ -75,7 +61,7 @@ namespace Proffy.WebAPI.Controllers
             {
                 var teacher = svcTeacherInfo.CreateTeacher(teacherInfoDTO);
                 svcTeacherInfo.Commit();
-                return Ok(new { teacher.TeacherID, teacher.Name } + " TeacherInfo createad successfully ");
+                return Ok(new { teacher.TeacherID, teacher.Name });
             }
             catch (Exception ex)
             {

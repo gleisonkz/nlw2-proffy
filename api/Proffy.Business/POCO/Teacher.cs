@@ -6,7 +6,6 @@
         public string Name { get; set; }
         public string Avatar { get; set; }
         public string WhatsApp { get; set; }
-        public string Bio { get; set; }
-        public Lesson Lesson { get; set; }
+        public string Bio { get; set; }  
     }
 }

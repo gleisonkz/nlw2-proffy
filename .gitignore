@@ -6,6 +6,7 @@
 /server/node_modules
 
 /api/Proffy.WebAPI/bin
+api\Proffy.WebAPI\bin
 /api/Proffy.WebAPI/obj
 
 /api/Proffy.RepositoryEF/bin

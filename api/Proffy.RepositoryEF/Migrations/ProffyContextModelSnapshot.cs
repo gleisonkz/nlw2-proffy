@@ -42,16 +42,9 @@ namespace Proffy.RepositoryEF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Cost");
-
                     b.Property<string>("Subject");
 
-                    b.Property<int>("TeacherID");
-
                     b.HasKey("LessonID");
-
-                    b.HasIndex("TeacherID")
-                        .IsUnique();
 
                     b.ToTable("Lesson");
                 });
@@ -64,7 +57,7 @@ namespace Proffy.RepositoryEF.Migrations
 
                     b.Property<int>("From");
 
-                    b.Property<int>("LessonID");
+                    b.Property<int>("TeacherLessonID");
 
                     b.Property<int>("To");
 
@@ -72,7 +65,7 @@ namespace Proffy.RepositoryEF.Migrations
 
                     b.HasKey("LessonScheduleID");
 
-                    b.HasIndex("LessonID");
+                    b.HasIndex("TeacherLessonID");
 
                     b.ToTable("LessonSchedule");
                 });
@@ -96,6 +89,27 @@ namespace Proffy.RepositoryEF.Migrations
                     b.ToTable("Teacher");
                 });
 
+            modelBuilder.Entity("Proffy.Business.POCO.TeacherLesson", b =>
+                {
+                    b.Property<int>("TeacherLessonID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Cost");
+
+                    b.Property<int>("LessonID");
+
+                    b.Property<int>("TeacherID");
+
+                    b.HasKey("TeacherLessonID");
+
+                    b.HasIndex("LessonID");
+
+                    b.HasIndex("TeacherID");
+
+                    b.ToTable("TeacherLesson");
+                });
+
             modelBuilder.Entity("Proffy.Business.POCO.Connection", b =>
                 {
                     b.HasOne("Proffy.Business.POCO.Teacher", "Teacher")
@@ -104,19 +118,24 @@ namespace Proffy.RepositoryEF.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Proffy.Business.POCO.Lesson", b =>
+            modelBuilder.Entity("Proffy.Business.POCO.LessonSchedule", b =>
                 {
-                    b.HasOne("Proffy.Business.POCO.Teacher", "Teacher")
-                        .WithOne("Lesson")
-                        .HasForeignKey("Proffy.Business.POCO.Lesson", "TeacherID")
+                    b.HasOne("Proffy.Business.POCO.TeacherLesson", "TeacherLesson")
+                        .WithMany()
+                        .HasForeignKey("TeacherLessonID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Proffy.Business.POCO.LessonSchedule", b =>
+            modelBuilder.Entity("Proffy.Business.POCO.TeacherLesson", b =>
                 {
                     b.HasOne("Proffy.Business.POCO.Lesson", "Lesson")
-                        .WithMany("LessonSchedule")
+                        .WithMany()
                         .HasForeignKey("LessonID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Proffy.Business.POCO.Teacher", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

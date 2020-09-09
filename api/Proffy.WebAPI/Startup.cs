@@ -39,6 +39,7 @@ namespace Proffy.WebAPI
             services.AddScoped<IUnityOfWork, UnityOfWork>();
             services.AddScoped<ITeacherInfoService, TeacherInfoService>();
             services.AddScoped<IConnectionService, ConnectionService>();
+            services.AddScoped<ILessonService, LessonService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

@@ -1,6 +1,7 @@
 ﻿using Proffy.Business.Interfaces;
 using Proffy.Business.POCO;
 using Proffy.Repository.Interfaces;
+using System;
 using System.Linq;
 
 namespace Proffy.Business.Services
@@ -41,6 +42,7 @@ namespace Proffy.Business.Services
     public interface ITeacherInfoService : IServiceFacade
     {
         IQueryable<Teacher> GetTeachers();
+        IQueryable<TeacherLesson> GetTeacherLesson();
         IQueryable<Lesson> GetLessons();
         Teacher CreateTeacher<T>(ITeacherInfoDTO<T> teacherInfoDTO) where T : ILessonScheduleDTO;
     }
@@ -50,8 +52,7 @@ namespace Proffy.Business.Services
         private readonly IRepository<Teacher> repoTeacher;
         private readonly IRepository<Lesson> repoLesson;
         private readonly IRepository<LessonSchedule> repoLessonSchedule;
-
-
+        private readonly IRepository<TeacherLesson> repoTeacherLesson;
 
         public TeacherInfoService(IFactoryRepository factoryRepository, IUnityOfWork unityOfWork) :
             base(factoryRepository, unityOfWork)
@@ -59,6 +60,12 @@ namespace Proffy.Business.Services
             repoTeacher = factoryRepository.CreateRepository<Teacher>();
             repoLesson = factoryRepository.CreateRepository<Lesson>();
             repoLessonSchedule = factoryRepository.CreateRepository<LessonSchedule>();
+            repoTeacherLesson = factoryRepository.CreateRepository<TeacherLesson>();
+        }
+
+        public IQueryable<TeacherLesson> GetTeacherLesson()
+        {
+            return repoTeacherLesson.GetQuery();
         }
 
         public IQueryable<Teacher> GetTeachers()
@@ -78,31 +85,49 @@ namespace Proffy.Business.Services
                 Avatar = teacherInfoDTO.Avatar,
                 Bio = teacherInfoDTO.Bio,
                 WhatsApp = teacherInfoDTO.WhatsApp
-            };
+            };                       
 
             repoTeacher.Add(teacher);
 
-            var lesson = CreateLesson(teacherInfoDTO);
-            lesson.Teacher = teacher;
+            var lesson = GetLessons().Where(c => c.Subject == teacherInfoDTO.Subject)
+                                     .Single();
+
+            var teacherLesson = new TeacherLesson()
+            {
+                TeacherID = teacher.TeacherID,
+                LessonID = lesson.LessonID,
+                Cost = teacherInfoDTO.Cost                
+            };
 
             if (teacherInfoDTO.Schedule != null)
             {
                 foreach (var item in teacherInfoDTO.Schedule)
                 {
-                    var lessonSchedule = CreateLessonSchedule(item);
-                    lessonSchedule.Lesson = lesson;
+                    var lessonSchedule = CreateLessonSchedule(item);                    
+                    lessonSchedule.TeacherLesson = teacherLesson;
+                    lessonSchedule.TeacherLessonID = teacherLesson.TeacherLessonID;
                 }
             }
             return teacher;
         }
         private Lesson CreateLesson(ILessonDTO lessonDTO)
         {
-            var objLesson = new Lesson
-            {
-                Subject = lessonDTO.Subject,
-                Cost = lessonDTO.Cost,
-            };
-            return repoLesson.Add(objLesson);
+            //var lesson = GetLessons().Where(c => c.Subject == lessonDTO.Subject).Single();
+
+            //var objLesson = new TeacherLesson
+            //{
+            //    Subject = lessonDTO.Subject,
+            //    Cost = lessonDTO.Cost,
+            //};
+            //return repoTeacherLesson.Add(objLesson);
+
+            //var objLesson = new Lesson
+            //{
+            //    Subject = lessonDTO.Subject,
+            //    Cost = lessonDTO.Cost,
+            //};
+            //return repoLesson.Add(objLesson);
+            throw new NotImplementedException();
         }
         private LessonSchedule CreateLessonSchedule(ILessonScheduleDTO LessonScheduleItem)
         {
@@ -115,5 +140,7 @@ namespace Proffy.Business.Services
             var result = repoLessonSchedule.Add(lessonSchedule);
             return result;
         }
+
+
     }
 }
