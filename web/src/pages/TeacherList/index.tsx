@@ -8,13 +8,19 @@ import Select from '../../components/Select';
 import api from '../../services/api';
 
 import './styles.css';
+import { Lesson } from '../../interfaces/lesson';
 
 const TeacherList: React.FC = () => {
   const [fadeState, setFadeState] = useState('hidden');
   const [isSearched, setIsSearched] = useState(false);
+  const [lessons, setLessons] = useState<Lesson[]>([]);
 
   useEffect(() => {
     setFadeState('visible');
+    api.get<Lesson[]>('lesson').then((response) => {
+      const lessons = response.data;
+      setLessons(lessons);
+    });
   }, []);
 
   const [teachers, setTeachers] = useState<Teacher[]>([]);
@@ -30,7 +36,7 @@ const TeacherList: React.FC = () => {
     const response = await api.get<Teacher[]>('teacherinfo', {
       params: {
         subject,
-        weekDay,
+        weekDay: +weekDay,
         time,
       },
     });
@@ -47,18 +53,7 @@ const TeacherList: React.FC = () => {
             label="Matéria"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            options={[
-              { value: 'Artes', label: 'Artes' },
-              { value: 'Biologia', label: 'Biologia' },
-              { value: 'Ciências', label: 'Ciências' },
-              { value: 'Educação física', label: 'Educação física' },
-              { value: 'Física', label: 'Física' },
-              { value: 'Geografia', label: 'Geografia' },
-              { value: 'História', label: 'História' },
-              { value: 'Matemática', label: 'Matemática' },
-              { value: 'Português', label: 'Português' },
-              { value: 'Química', label: 'Química' },
-            ]}
+            options={lessons}
           />
           <Select
             name="week-day"

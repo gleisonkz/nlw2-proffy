@@ -6,6 +6,8 @@ import Input from '../../components/Input';
 import TextArea from '../../components/TextArea';
 import Select from '../../components/Select';
 
+import { Lesson } from '../../interfaces/lesson';
+
 import warningIcon from '../../assets/images/icons/warning.svg';
 
 import api from '../../services/api';
@@ -14,9 +16,14 @@ import './styles.css';
 
 const TeacherForm: React.FC = () => {
   const [fadeState, setFadeState] = useState('hidden');
+  const [lessons, setLessons] = useState<Lesson[]>([]);
 
   useEffect(() => {
     setFadeState('visible');
+    api.get<Lesson[]>('lesson').then((response) => {
+      const lessons = response.data;
+      setLessons(lessons);
+    });
   }, []);
 
   const history = useHistory();
@@ -128,18 +135,7 @@ const TeacherForm: React.FC = () => {
               onChange={(e) => {
                 setSubject(e.target.value);
               }}
-              options={[
-                { value: 'Artes', label: 'Artes' },
-                { value: 'Biologia', label: 'Biologia' },
-                { value: 'Ciências', label: 'Ciências' },
-                { value: 'Educação física', label: 'Educação física' },
-                { value: 'Física', label: 'Física' },
-                { value: 'Geografia', label: 'Geografia' },
-                { value: 'História', label: 'História' },
-                { value: 'Matemática', label: 'Matemática' },
-                { value: 'Português', label: 'Português' },
-                { value: 'Química', label: 'Química' },
-              ]}
+              options={lessons}
             />
 
             <Input
