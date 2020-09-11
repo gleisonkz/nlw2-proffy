@@ -33,3 +33,18 @@ Technologies that I used to develop this application
 - [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 - [Entity Framework](https://docs.microsoft.com/en-us/ef/core/)
 - [SQL Server](https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15)
+
+## 📈 My improvements
+
+- API
+  - Rebuilding of the API built with express to .NET Core with Entity Framework Core.
+  - Use of design patterns Generic Repository, Unit of Work, Factory and Services
+- List of Subjects
+  - I removed a list of subjects that was fixed in the html in two different places, storing it in the database.
+- Teacher Search Filters
+  - Now if the user does not fill any option in the filter, all teachers available will be listed.
+  - Possibility of conducting a search by filling in only 1 or all fields.
+- CSS Effects
+  - Transition effects added between the pages.
+  - Transition effects added on pseudo elements of the buttons that have focus.
+  - Creation of component with float label effect
