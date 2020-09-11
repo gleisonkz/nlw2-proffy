@@ -1,25 +1,34 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 
 import PageHeader from '../../components/PageHeader';
-import TeacherItem, { Teacher } from '../../components/TeacherItem';
+import TeacherItem from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
+
+import { Teacher } from '../../models/teacher';
+import { Lesson } from '../../models/lesson';
+import proffyIcon from '../../assets/images/icons/proffy.svg';
 
 import api from '../../services/api';
 
 import './styles.css';
-import { Lesson } from '../../interfaces/lesson';
 
 const TeacherList: React.FC = () => {
   const [fadeState, setFadeState] = useState('hidden');
   const [isSearched, setIsSearched] = useState(false);
   const [lessons, setLessons] = useState<Lesson[]>([]);
+  const [totalTeachers, setTotalTeachers] = useState<number>(0);
 
   useEffect(() => {
     setFadeState('visible');
     api.get<Lesson[]>('lesson').then((response) => {
       const lessons = response.data;
       setLessons(lessons);
+    });
+
+    api.get<number>('teacherinfo/count').then((response) => {
+      const totalTeachersResponse = response.data;
+      setTotalTeachers(totalTeachersResponse);
     });
   }, []);
 
@@ -46,7 +55,11 @@ const TeacherList: React.FC = () => {
 
   return (
     <div id="page-teacher-list" className={`container ${fadeState}`}>
-      <PageHeader title="Estes são os proffys disponíveis.">
+      <PageHeader
+        title="Estes são os proffys disponíveis."
+        icon={proffyIcon}
+        textIcon={`Nós temos ${totalTeachers} professores.`}
+      >
         <form id="search-teachers" onSubmit={searchTeachers}>
           <Select
             name="subject"

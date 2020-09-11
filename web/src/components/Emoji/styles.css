@@ -1,0 +1,18 @@
+.emoji {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emoji p {
+  width: 81px;
+  height: 40px;
+
+  margin: 9px;
+
+  font-family: Poppins;
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #d4c2ff;
+}

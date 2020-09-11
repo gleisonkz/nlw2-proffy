@@ -1,20 +1,10 @@
 import React from 'react';
 
-import api from '../../services/api';
+import { Teacher } from '../../models/teacher';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
+import api from '../../services/api';
 import './styles.css';
-
-export interface Teacher {
-  id: number;
-  subject: string;
-  cost: number;
-  user_id: number;
-  name: string;
-  avatar: string;
-  whatsapp: string;
-  bio: string;
-}
 
 interface TeacherItemProps {
   teacher: Teacher;
@@ -38,6 +28,62 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
       </header>
 
       <p>{teacher.bio}</p>
+      <article className="schedule-container">
+        <div className="schedule-card">
+          <header className="week-day">
+            <span>Dia</span>
+            <strong>Segunda</strong>
+          </header>
+          <footer className="time">
+            <span>Horário</span>
+            <strong>8h - 18h</strong>
+          </footer>
+        </div>
+
+        <div className="schedule-card">
+          <header className="week-day">
+            <span>Dia</span>
+            <strong>Segunda</strong>
+          </header>
+          <footer className="time">
+            <span>Horário</span>
+            <strong>8h - 18h</strong>
+          </footer>
+        </div>
+
+        <div className="schedule-card">
+          <header className="week-day">
+            <span>Dia</span>
+            <strong>Segunda</strong>
+          </header>
+          <footer className="time">
+            <span>Horário</span>
+            <strong>8h - 18h</strong>
+          </footer>
+        </div>
+
+        <div className="schedule-card">
+          <header className="week-day">
+            <span>Dia</span>
+            <strong>Segunda</strong>
+          </header>
+          <footer className="time">
+            <span>Horário</span>
+            <strong>8h - 18h</strong>
+          </footer>
+        </div>
+
+        <div className="schedule-card">
+          <header className="week-day">
+            <span>Dia</span>
+            <strong>Segunda</strong>
+          </header>
+          <footer className="time">
+            <span>Horário</span>
+            <strong>8h - 18h</strong>
+          </footer>
+        </div>
+      </article>
 
       <footer>
         <p>

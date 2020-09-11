@@ -27,7 +27,7 @@
 }
 
 #page-teacher-form main fieldset legend {
-  font: 700 2.4rem Archivo, sans-serif;
+  font: 700 2.4rem Archivo;
   color: var(--color-text-title);
   margin-bottom: 2.4rem;
   display: flex;
@@ -42,7 +42,7 @@
   background: none;
   border: 0;
   color: var(--color-primary);
-  font: 700 1.6rem Archivo, sans-serif;
+  font: 700 1.6rem Archivo;
   cursor: pointer;
   transition: color 0.2s;
 }
@@ -88,7 +88,7 @@
   border: 0;
   border-radius: 0.8rem;
   cursor: pointer;
-  font: 700 1.6rem Archivo, sans-serif;
+  font: 700 1.6rem Archivo;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,6 +99,50 @@
 
 #page-teacher-form main footer button:hover {
   background: var(--color-secondary-dark);
+}
+
+#page-teacher-form .page-header {
+  display: grid;
+  background-color: var(--color-primary);
+
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-areas:
+    'nav nav nav'
+    'title title title'
+    'buttons buttons icon';
+}
+
+#page-teacher-form .page-header .header-content-title {
+  width: 37.3rem;
+}
+
+#page-teacher-form .page-header .header-content {
+  align-items: center;
+  justify-content: center;
+  flex: 0;
+  margin-bottom: 6.4rem;
+}
+
+#page-teacher-form .page-header .header-content > p {
+  margin-top: 0;
+
+  font-family: Poppins;
+  font-weight: normal;
+}
+
+#page-teacher-form .page-header .emoji {
+  margin-bottom: 6.4rem;
+}
+#page-teacher-form .page-header .emoji > p {
+  width: 10.5rem;
+
+  font-family: Poppins;
+  font-weight: normal;
+
+  font-size: 12px;
+  line-height: 20px;
 }
 
 @media (min-width: 700px) {

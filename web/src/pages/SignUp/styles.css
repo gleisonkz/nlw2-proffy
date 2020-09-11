@@ -33,7 +33,7 @@
 }
 
 .sign-up .form header p {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -50,7 +50,7 @@
 }
 
 .sign-up .help span {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 1.4rem;
@@ -101,7 +101,7 @@
 }
 
 .sign-up form > button {
-  font-family: Archivo, sans-serif;
+  font-family: Archivo;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -134,7 +134,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 12.8rem;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;

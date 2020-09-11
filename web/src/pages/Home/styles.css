@@ -85,7 +85,7 @@
 
 .logo-container > .description {
   width: 298.47px;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
 }
 
 .hero-image {
@@ -102,14 +102,14 @@
 }
 
 .home footer .welcome-message {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   margin-left: 16rem;
   font-size: 20px;
   line-height: 30px;
 }
 
 .home footer > .welcome-message > p {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   font-style: normal;
   font-size: 2rem;
   line-height: 3rem;
@@ -129,7 +129,7 @@
   display: flex;
   flex-direction: column;
 
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   line-height: 2rem;
   color: #9c98a6;
 
@@ -161,7 +161,7 @@
   height: 10.4rem;
 
   border-radius: 0.8rem;
-  font: 700 2rem Archivo, sans-serif;
+  font: 700 2rem Archivo;
 
   text-decoration: none;
   color: var(--color-button-text);
@@ -240,7 +240,7 @@
   width: 30rem;
   height: 10.4rem;
   border-radius: 0.8rem;
-  font: 700 2rem Archivo, sans-serif;
+  font: 700 2rem Archivo, ;
 
   text-decoration: none;
   color: var(--color-button-text);

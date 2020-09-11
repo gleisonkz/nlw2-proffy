@@ -3,6 +3,7 @@
   border: 1px solid var(--color-line-in-white);
   border-radius: 0.8rem;
   margin-top: 2.4rem;
+  width: 73.6rem;
   overflow: hidden;
 }
 
@@ -23,7 +24,7 @@
 }
 
 .teacher-item header div strong {
-  font: 700 2.4rem Archivo, sans-serif;
+  font: 700 2.4rem Archivo;
   display: block;
   color: var(--color-text-title);
 }
@@ -35,9 +36,67 @@
 }
 
 .teacher-item > p {
+  font-weight: normal;
+  font-family: Poppins;
+
   padding: 0 2rem;
   font-size: 1.6rem;
-  line-height: 2.8;
+  line-height: 2.8rem;
+}
+
+.teacher-item .schedule-container {
+  display: flex;
+  margin: 3.2rem;
+}
+
+.schedule-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+
+  width: 12.2rem;
+  height: 13.6rem;
+
+  padding-left: 1.6rem;
+  margin-right: 1.6rem;
+
+  border: 1px solid #e6e6f0;
+  border-radius: 0.8rem;
+  background-color: #fafafc;
+}
+
+.schedule-card > .week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-size: 12px;
+  line-height: 20px;
+
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.schedule-card > .time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-size: 12px;
+  line-height: 20px;
+
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.schedule-card > .week-day > strong,
+.schedule-card > .time > strong {
+  font-size: 16px;
+  line-height: 26px;
 }
 
 .teacher-item footer {
@@ -64,7 +123,7 @@
   border: 0;
   border-radius: 0.8rem;
   cursor: pointer;
-  font: 700 1.4rem Archivo, sans-serif;
+  font: 700 1.4rem Archivo;
   display: flex;
   align-items: center;
   justify-content: space-evenly;

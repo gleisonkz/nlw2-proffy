@@ -19,7 +19,7 @@
   border: 0;
   border-radius: 0.8rem;
   cursor: pointer;
-  font: 700 1.6rem Archivo, sans-serif;
+  font: 700 1.6rem Archivo;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,6 +47,7 @@ button[type='submit']:focus {
   flex-direction: column;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #page-teacher-list main > p {

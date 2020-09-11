@@ -6,9 +6,10 @@ import Input from '../../components/Input';
 import TextArea from '../../components/TextArea';
 import Select from '../../components/Select';
 
-import { Lesson } from '../../interfaces/lesson';
+import { Lesson } from '../../models/lesson';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
+import rocketIcon from '../../assets/images/icons/rocket.svg';
 
 import api from '../../services/api';
 
@@ -85,6 +86,8 @@ const TeacherForm: React.FC = () => {
     <div id="page-teacher-form" className={`container ${fadeState}`}>
       <PageHeader
         title="Que incrível que você quer dar aulas."
+        icon={rocketIcon}
+        textIcon="Prepare-se! vai ser o máximo."
         description="O primeiro passo é preencher esse formulário de inscrição"
       />
 
