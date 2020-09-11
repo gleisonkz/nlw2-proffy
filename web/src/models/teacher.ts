@@ -7,4 +7,20 @@ export interface Teacher {
     avatar: string;
     whatsapp: string;
     bio: string;
+    lessonSchedule?: LessonSchedule[]
+}
+
+export enum DayOfWeek {
+    Domingo,
+    Segunda,
+    Terça,
+    Quarta,
+    Quinta,
+    Sexta,
+}
+
+export interface LessonSchedule {
+    weekDay: number
+    from: string
+    to: string
 }

@@ -28,10 +28,6 @@
   margin-top: 3.2rem;
 }
 
-#search-teachers button[type='submit'] {
-  margin-top: 2.5rem;
-}
-
 button[type='submit']:focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(9, 110, 68, 0.5);
@@ -80,7 +76,7 @@ button[type='submit']:focus {
 
   #page-teacher-list main {
     padding: 3.2rem 0;
-    max-width: 740px;
+    max-width: 787px;
     margin: 0 auto;
   }
 }
