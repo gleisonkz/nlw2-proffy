@@ -44,6 +44,7 @@ namespace Proffy.Business.Services
         IQueryable<Teacher> GetTeachers();
         IQueryable<TeacherLesson> GetTeacherLesson();
         IQueryable<Lesson> GetLessons();
+        int GetTotalTeachers();
         Teacher CreateTeacher<T>(ITeacherInfoDTO<T> teacherInfoDTO) where T : ILessonScheduleDTO;
     }
 
@@ -71,6 +72,11 @@ namespace Proffy.Business.Services
         public IQueryable<Teacher> GetTeachers()
         {
             return repoTeacher.GetQuery();
+        }
+
+        public int GetTotalTeachers()
+        {
+            return repoTeacher.GetQuery().Count();
         }
         public IQueryable<Lesson> GetLessons()
         {
@@ -140,7 +146,6 @@ namespace Proffy.Business.Services
             var result = repoLessonSchedule.Add(lessonSchedule);
             return result;
         }
-
 
     }
 }

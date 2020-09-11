@@ -21,6 +21,14 @@ namespace Proffy.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("count")]
+        public IActionResult GetTeacher()
+        {
+            var totalTeachers = svcTeacherInfo.GetTotalTeachers();
+            return Ok(totalTeachers);
+        }
+
+        [HttpGet]
         public IActionResult Get([FromQuery] LessonFilterDTO filter)
         {
             var time = 0;
