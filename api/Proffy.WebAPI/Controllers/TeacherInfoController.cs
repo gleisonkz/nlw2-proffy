@@ -31,6 +31,10 @@ namespace Proffy.WebAPI.Controllers
         [HttpGet]
         public IActionResult Get([FromQuery] LessonFilterDTO filter)
         {
+            //var time = 0;
+            //if (filter.Time != null)
+            //    time = Utils.ConvertHourToMinutes(filter.Time);  
+            
             var time = 0;
             if (filter.Time != null)
                 time = Utils.ConvertHourToMinutes(filter.Time);
@@ -56,9 +60,15 @@ namespace Proffy.WebAPI.Controllers
                     c.Teacher.Name,
                     c.Teacher.Avatar,
                     c.Teacher.WhatsApp,
-                    c.Teacher.Bio
+                    c.Teacher.Bio,
+                    LessonSchedule = c.LessonSchedule.Select(d => new { 
+                        d.WeekDay,
+                        From = TimeSpan.FromMinutes(d.From).TotalHours, 
+                        To = TimeSpan.FromMinutes(d.To).TotalHours
+                    })
+                    .ToList()
                 })
-                .ToList();            
+                .ToList();
             return Ok(teachers);
         }
 

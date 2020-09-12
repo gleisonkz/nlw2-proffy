@@ -137,6 +137,13 @@ namespace Proffy.Business.Services
         }
         private LessonSchedule CreateLessonSchedule(ILessonScheduleDTO LessonScheduleItem)
         {
+            //var lessonSchedule = new LessonSchedule
+            //{
+            //    To = Utils.ConvertHourToMinutes(LessonScheduleItem.To),
+            //    From = Utils.ConvertHourToMinutes(LessonScheduleItem.From),
+            //    WeekDay = LessonScheduleItem.WeekDay,
+            //};
+
             var lessonSchedule = new LessonSchedule
             {
                 To = Utils.ConvertHourToMinutes(LessonScheduleItem.To),
