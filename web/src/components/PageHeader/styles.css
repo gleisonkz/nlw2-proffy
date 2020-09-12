@@ -39,10 +39,23 @@
   opacity: 0.6;
 }
 
-.page-header .top-bar-container a + a > img {
+.page-header .top-bar-container .logo {
   height: 1.6rem;
   margin-right: 16.2rem;
 }
+
+.page-header .top-bar-container .page-title {
+  font-family: Archivo;
+  font-size: 16px;
+  line-height: 17px;
+
+  color: #d4c2ff;
+}
+
+/* .page-header .top-bar-container a + a > img {
+  height: 1.6rem;
+  margin-right: 16.2rem;
+} */
 
 .page-header .top-bar-container .back-button-img {
   margin-left: 16.2rem;

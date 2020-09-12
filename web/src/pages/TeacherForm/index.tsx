@@ -89,6 +89,7 @@ const TeacherForm: React.FC = () => {
         icon={rocketIcon}
         textIcon="Prepare-se! vai ser o máximo."
         description="O primeiro passo é preencher esse formulário de inscrição"
+        pageTitle="Dar Aulas"
       />
 
       <main>

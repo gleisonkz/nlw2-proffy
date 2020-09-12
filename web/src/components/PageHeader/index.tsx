@@ -11,6 +11,7 @@ interface PageHeaderProps {
   description?: string;
   icon: string;
   textIcon: string;
+  pageTitle: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({
@@ -18,13 +19,15 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   description,
   icon,
   textIcon,
+  pageTitle,
   children,
 }) => (
   <header className="page-header">
     <div className="top-bar-container">
       <BackButton routeTo="/home" />
+      <span className="page-title">{pageTitle}</span>
       <Link to={'/home'}>
-        <img src={logoImg} alt="Proffy" />
+        <img className="logo" src={logoImg} alt="Proffy" />
       </Link>
     </div>
     <Emoji icon={icon} text={textIcon} />

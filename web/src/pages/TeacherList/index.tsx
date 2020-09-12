@@ -59,6 +59,7 @@ const TeacherList: React.FC = () => {
         title="Estes são os proffys disponíveis."
         icon={proffyIcon}
         textIcon={`Nós temos ${totalTeachers} professores.`}
+        pageTitle="Estudar"
       >
         <form id="search-teachers" onSubmit={searchTeachers}>
           <Select
