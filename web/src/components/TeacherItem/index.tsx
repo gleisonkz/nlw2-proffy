@@ -5,38 +5,36 @@ import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import api from '../../services/api';
 import './styles.css';
+import { LessonSchedule } from './../../models/teacher';
 
 interface TeacherItemProps {
   teacher: Teacher;
 }
 
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
-  const testTeacher: Teacher = {
-    id: 5,
-    user_id: 5,
-    subject: 'Biologia',
-    cost: 25.0,
-    name: 'Renato',
-    avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRnYhsoYw_1Xdh3xawjqFeQK1mU_gpAlL4IAw&usqp=CAU',
-    whatsapp: '31994490279',
-    bio:
-      'GitLocalize automatically keeps translations up to date by syncing with your repository.',
-    lessonSchedule: [
-      { weekDay: 0, from: '', to: '' },
-      { weekDay: 1, from: '', to: '' },
-      { weekDay: 2, from: '8', to: '15' },
-      { weekDay: 3, from: '', to: '' },
+  const { lessonSchedule } = teacher;
+  let [scheduleDays] = useState<LessonSchedule[]>([
+    { weekDay: DayOfWeek.Domingo, from: '', to: '' },
+    { weekDay: DayOfWeek.Segunda, from: '', to: '' },
+    { weekDay: DayOfWeek.Terça, from: '', to: '' },
+    { weekDay: DayOfWeek.Quarta, from: '', to: '' },
+    { weekDay: DayOfWeek.Quinta, from: '', to: '' },
+    { weekDay: DayOfWeek.Sexta, from: '', to: '' },
+  ]);
 
-      { weekDay: 5, from: '8', to: '14' },
-    ],
-  };
-
-  const [scheduleDays, setScheduleDays] = useState([]);
+  scheduleDays = scheduleDays.map((c) => {
+    return (
+      lessonSchedule?.find((d) => d.weekDay === c.weekDay) || {
+        weekDay: c.weekDay,
+        from: '',
+        to: '',
+      }
+    );
+  });
 
   function createNewConnection() {
-    api.post('connections', {
-      user_id: teacher.id,
+    api.post('connection', {
+      teacherID: teacher.teacherID,
     });
   }
 
@@ -53,9 +51,9 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
       <p>{teacher.bio}</p>
 
       <article className="schedule-container">
-        {testTeacher.lessonSchedule?.map(({ weekDay, from, to }) => (
+        {scheduleDays.map(({ weekDay, from, to }) => (
           <div
-            key={teacher.id}
+            key={weekDay}
             className={`schedule-card ${from && to ? '' : 'disabled'}`}
           >
             <header className="week-day">

@@ -1,8 +1,7 @@
 export interface Teacher {
-    id: number;
+    teacherID: number;
     subject: string;
     cost: number;
-    user_id: number;
     name: string;
     avatar: string;
     whatsapp: string;
@@ -20,7 +19,7 @@ export enum DayOfWeek {
 }
 
 export interface LessonSchedule {
-    weekDay: number
+    weekDay: DayOfWeek
     from: string
     to: string
 }
