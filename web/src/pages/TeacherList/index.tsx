@@ -49,7 +49,7 @@ const TeacherList: React.FC = () => {
         time,
       },
     });
-
+    console.log('teachers');
     setTeachers(response.data);
   }
 

@@ -56,7 +56,7 @@ namespace Proffy.WebAPI.Controllers
                 {
                     c.TeacherID,
                     c.Lesson.Subject,
-                    c.Cost,
+                    Cost = decimal.Round(c.Cost,4),
                     c.Teacher.Name,
                     c.Teacher.Avatar,
                     c.Teacher.WhatsApp,

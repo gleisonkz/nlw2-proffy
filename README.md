@@ -48,3 +48,48 @@ Technologies that I used to develop this application
   - Transition effects added between the pages.
   - Transition effects added on pseudo elements of the buttons that have focus.
   - Creation of component with float label effect
+
+## 📌 Todo
+
+Version 2.0 Features
+
+- ⬜️ Web
+
+  - ✅ Extended layout
+    - ✅ Login
+    - ✅ Remember me
+    - ✅ Sign In
+    - ✅ Succeed Screen
+    - ✅ Lost Password
+  - ⬜️ User auth
+    - ⬜️ Password recovery
+    - ⬜️ User logout
+    - ⬜️ Teacher profile
+    - ⬜️ Pagination of teachers result
+    - ✅ Show teacher schedule hours
+    - ⬜️ Save favorite teachers
+    - ⬜️ Rating system
+
+- ⬜️ Mobile
+
+  - ⬜️ Extended layout
+    - ⬜️ Login
+    - ⬜️ Remember me
+    - ⬜️ Sign In
+    - ⬜️ Succeed Screen
+  - ⬜️ User auth
+    - ⬜️ Password recovery
+    - ⬜️ User logout
+    - ⬜️ Teacher profile
+    - ⬜️ Pagination of teachers result
+    - ⬜️ Show teacher schedule hours
+    - ⬜️ Save favorite teachers
+    - ⬜️ Rating system
+    - ⬜️ Mobile
+      - ⬜️ Splash screen
+      - ⬜️ Login
+      - ⬜️ Remember me
+      - ⬜️ Sign In
+      - ⬜️ Succeed Screen
+
+- ⬜️ Deploy
