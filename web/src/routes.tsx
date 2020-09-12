@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp/index';
 import SignUpDone from './pages/SignUpDone/index';
 import LostPassword from './pages/LostPassword/index';
 import LostPasswordDone from './pages/LostPasswordDone/index';
+import Profile from './pages/Profile/index';
 
 function Routes() {
   return (
@@ -26,6 +27,7 @@ function Routes() {
       <Route path="/home" exact component={Home} />
       <Route path="/study" component={TeacherList} />
       <Route path="/give-classes" component={TeacherForm} />
+      <Route path="/profile" component={Profile} />
     </BrowserRouter>
   );
 }

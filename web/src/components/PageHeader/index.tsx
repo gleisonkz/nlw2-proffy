@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 import Emoji from './../Emoji/index';
 
 interface PageHeaderProps {
-  title: string;
+  title?: string;
   description?: string;
-  icon: string;
-  textIcon: string;
+  icon?: string;
+  textIcon?: string;
   pageTitle: string;
 }
 
@@ -23,14 +23,14 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   children,
 }) => (
   <header className="page-header">
-    <div className="top-bar-container">
+    {/*<div className="top-bar-container">
       <BackButton routeTo="/home" />
       <span className="page-title">{pageTitle}</span>
       <Link to={'/home'}>
         <img className="logo" src={logoImg} alt="Proffy" />
       </Link>
-    </div>
-    <Emoji icon={icon} text={textIcon} />
+</div>*/}
+    {icon && <Emoji icon={icon} text={textIcon} />}
     <strong className="header-content-title">{title}</strong>
     <div className="header-content">
       {description && <p>{description}</p>}

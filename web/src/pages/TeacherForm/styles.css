@@ -3,10 +3,6 @@
   height: 100vh;
 }
 
-#page-teacher-form .page-header .header-content {
-  margin-bottom: 6.4rem;
-}
-
 #page-teacher-form main {
   background: var(--color-box-base);
   width: 100%;
@@ -105,34 +101,39 @@
   display: grid;
   background-color: var(--color-primary);
 
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
 
   grid-template-areas:
-    'nav nav nav'
     'title title title'
     'buttons buttons icon';
 }
 
 #page-teacher-form .page-header .header-content-title {
+  margin-top: 3.4rem;
   width: 37.3rem;
 }
 
 #page-teacher-form .page-header .header-content {
   align-items: center;
   justify-content: center;
+
+  width: 283px;
+  height: 110px;
+
   flex: 0;
-  margin-bottom: 6.4rem;
+
+  margin-top: 1.5rem;
 }
 
 #page-teacher-form .page-header .header-content > p {
   margin-top: 0;
-
   font-family: Poppins;
   font-weight: normal;
 }
 
 #page-teacher-form .page-header .emoji {
+  margin-top: 1.6rem;
   margin-bottom: 6.4rem;
 }
 #page-teacher-form .page-header .emoji > p {
@@ -148,10 +149,6 @@
 @media (min-width: 700px) {
   #page-teacher-form {
     max-width: 100vw;
-  }
-
-  #page-teacher-form .page-header .header-content {
-    margin-bottom: 0;
   }
 
   #page-teacher-form main fieldset {

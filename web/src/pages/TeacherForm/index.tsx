@@ -14,6 +14,7 @@ import rocketIcon from '../../assets/images/icons/rocket.svg';
 import api from '../../services/api';
 
 import './styles.css';
+import NavBar from '../../components/NavBar';
 
 const TeacherForm: React.FC = () => {
   const [fadeState, setFadeState] = useState('hidden');
@@ -84,6 +85,7 @@ const TeacherForm: React.FC = () => {
 
   return (
     <div id="page-teacher-form" className={`container ${fadeState}`}>
+      <NavBar pageTitle="Dar Aulas" />
       <PageHeader
         title="Que incrível que você quer dar aulas."
         icon={rocketIcon}

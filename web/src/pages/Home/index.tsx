@@ -32,11 +32,14 @@ const Home: React.FC = () => {
       <section className={`home ${fadeState}`}>
         <main>
           <div className="avatar">
-            <img
-              src="https://avatars0.githubusercontent.com/u/48810597?s=460&u=b6c5c0042fdba194cc3dd2dd3b94e86b07f36e87&v=4"
-              alt=""
-            />
-            <span className="user-name">Gleison de Almeida</span>
+            <Link to="/profile" className="avatar-link">
+              <img
+                className="avatar-image"
+                src="https://avatars0.githubusercontent.com/u/48810597?s=460&u=b6c5c0042fdba194cc3dd2dd3b94e86b07f36e87&v=4"
+                alt=""
+              />
+              <span className="user-name">Gleison de Almeida</span>
+            </Link>
           </div>
 
           <Link to="/users/sign-in" className="study">

@@ -60,12 +60,27 @@
   margin-left: 16rem;
 }
 
-.home main > .avatar > img {
+.home main > .avatar .avatar-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+
+  transition: all 0.2s;
+}
+
+.home main > .avatar .avatar-image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+
+  transition: transform 0.2s;
 }
-.home main > .avatar > .user-name {
+
+.home main > .avatar .avatar-link:hover {
+  transform: scale(1.2);
+}
+.home main > .avatar .user-name {
   margin-left: 1.6rem;
 
   font-family: Poppins;

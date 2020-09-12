@@ -4,7 +4,7 @@ import './styles.css';
 
 interface EmojiProps {
   icon: string;
-  text: string;
+  text?: string;
 }
 
 const Emoji: React.FC<EmojiProps> = ({ icon, text }) => {

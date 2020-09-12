@@ -12,6 +12,7 @@ import proffyIcon from '../../assets/images/icons/proffy.svg';
 import api from '../../services/api';
 
 import './styles.css';
+import NavBar from '../../components/NavBar';
 
 const TeacherList: React.FC = () => {
   const [fadeState, setFadeState] = useState('hidden');
@@ -55,6 +56,7 @@ const TeacherList: React.FC = () => {
 
   return (
     <div id="page-teacher-list" className={`container ${fadeState}`}>
+      <NavBar pageTitle="Estudar" />
       <PageHeader
         title="Estes são os proffys disponíveis."
         icon={proffyIcon}
