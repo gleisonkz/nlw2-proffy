@@ -61,6 +61,7 @@ Version 2.0 Features
     - ✅ Sign In
     - ✅ Succeed Screen
     - ✅ Lost Password
+    - ⬜️ Teacher profile
   - ⬜️ User auth
     - ⬜️ Password recovery
     - ⬜️ User logout
