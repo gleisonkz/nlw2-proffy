@@ -134,24 +134,26 @@ const TeacherForm: React.FC = () => {
 
           <fieldset>
             <legend>Sobre a aula</legend>
-            <Select
-              name="subject"
-              label="Matéria"
-              value={subject}
-              onChange={(e) => {
-                setSubject(e.target.value);
-              }}
-              options={lessons}
-            />
+            <div className="input-container">
+              <Select
+                name="subject"
+                label="Matéria"
+                value={subject}
+                onChange={(e) => {
+                  setSubject(e.target.value);
+                }}
+                options={lessons}
+              />
 
-            <Input
-              name="cost"
-              label="Custo da sua hora para aula"
-              value={cost}
-              onChange={(e) => {
-                setCost(e.target.value);
-              }}
-            />
+              <Input
+                name="cost"
+                label="Custo da sua hora para aula"
+                value={cost}
+                onChange={(e) => {
+                  setCost(e.target.value);
+                }}
+              />
+            </div>
           </fieldset>
 
           <fieldset>

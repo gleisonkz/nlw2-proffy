@@ -1,10 +1,8 @@
 import React from 'react';
-import BackButton from '../BackButton';
-import logoImg from '../../assets/images/logo.svg';
+
+import Emoji from './../Emoji/index';
 
 import './styles.css';
-import { Link } from 'react-router-dom';
-import Emoji from './../Emoji/index';
 
 interface PageHeaderProps {
   title?: string;
@@ -23,13 +21,6 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   children,
 }) => (
   <header className="page-header">
-    {/*<div className="top-bar-container">
-      <BackButton routeTo="/home" />
-      <span className="page-title">{pageTitle}</span>
-      <Link to={'/home'}>
-        <img className="logo" src={logoImg} alt="Proffy" />
-      </Link>
-</div>*/}
     {icon && <Emoji icon={icon} text={textIcon} />}
     <strong className="header-content-title">{title}</strong>
     <div className="header-content">
