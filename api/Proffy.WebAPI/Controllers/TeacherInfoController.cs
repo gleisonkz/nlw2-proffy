@@ -30,11 +30,7 @@ namespace Proffy.WebAPI.Controllers
 
         [HttpGet]
         public IActionResult Get([FromQuery] LessonFilterDTO filter)
-        {
-            //var time = 0;
-            //if (filter.Time != null)
-            //    time = Utils.ConvertHourToMinutes(filter.Time);  
-            
+        {            
             var time = 0;
             if (filter.Time != null)
                 time = Utils.ConvertHourToMinutes(filter.Time);
