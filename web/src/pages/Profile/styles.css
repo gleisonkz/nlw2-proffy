@@ -2,3 +2,211 @@
   width: 100vw;
   height: 100vh;
 }
+
+.profile .profile-header-container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 47.1rem;
+  width: 100vw;
+
+  background-color: var(--color-primary);
+}
+
+.profile .profile-header-container > .profile-header {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 1110.05px;
+  height: 392.61px;
+
+  background-image: url(../../assets/images/background-profile.svg);
+}
+
+.profile .teacher-info .avatar {
+  height: 18rem;
+  width: 18rem;
+
+  border-radius: 50%;
+}
+
+.profile .image-container {
+  /* height: 18rem;
+  width: 18rem; */
+  position: relative;
+}
+
+.profile .image-container::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  content: url(../../assets//images/icons/camera.svg);
+  position: absolute;
+  width: 48px;
+  height: 48px;
+
+  left: 17.5rem;
+  bottom: 1.1rem;
+
+  padding-top: 3px;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+  background-color: #04d361;
+}
+
+.profile .teacher-info .name {
+  margin-top: 1.6rem;
+
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 25px;
+
+  color: var(--color-title-in-primary);
+}
+
+.profile .teacher-info .subject {
+  display: block;
+
+  margin-top: 1.6rem;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 26px;
+
+  color: #d4c2ff;
+}
+
+.profile main {
+  background: var(--color-box-base);
+  width: 100%;
+  max-width: 74rem;
+  border-radius: 0.8rem;
+  margin: -3.2rem auto 3.2rem;
+  padding-top: 6.4rem;
+  overflow: hidden;
+}
+
+.profile main fieldset {
+  border: 0;
+  padding: 0 2.4rem;
+}
+
+.profile main fieldset + fieldset {
+  margin-top: 6.4rem;
+}
+
+.profile main fieldset legend {
+  font: 700 2.4rem Archivo;
+  color: var(--color-text-title);
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--color-line-in-white);
+}
+
+.profile main fieldset legend button {
+  background: none;
+  border: 0;
+  color: var(--color-primary);
+  font: 700 1.6rem Archivo;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.profile main fieldset legend button:hover {
+  color: var(--color-primary-dark);
+}
+
+.profile main fieldset .input-block + .text-area-block {
+  margin-top: 2.4rem;
+}
+
+.profile main label {
+  color: var(--color-text-complement);
+}
+
+.profile .input-container .select-block {
+  width: 100%;
+  margin-right: 3.3rem;
+}
+
+.profile .input-container .input-block {
+  margin-top: 0;
+}
+
+.profile .input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile main footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 4rem 6.4rem;
+  background: var(--color-box-footer);
+  border-top: 1px solid var(--color-line-in-white);
+  margin-top: 6.4rem;
+}
+
+.profile main footer p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: var(--color-text-complement);
+}
+
+.profile main footer p img {
+  margin-right: 2rem;
+}
+
+.profile main footer button {
+  width: 20rem;
+  height: 5.6rem;
+  background: var(--color-secondary);
+  color: var(--color-button-text);
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font: 700 1.6rem Archivo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  margin-top: 0;
+}
+
+.profile main footer button:hover {
+  background: var(--color-secondary-dark);
+}
+
+.profile main .schedule-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 1.6rem;
+}
+
+.profile .schedule-item .input-block {
+  margin-top: 0 !important;
+}
