@@ -1,3 +1,27 @@
+.teacher-item-enter {
+  transform: translateX(300px);
+  transition: all 1.5s;
+  opacity: 0;
+}
+
+.teacher-item-enter-active {
+  transform: translateX(-32px);
+  opacity: 1;
+  transition: all 1.5s;
+}
+
+.teacher-item-exit {
+  opacity: 0;
+  transform: translateX(-20vw);
+  transition: all 1.5s;
+}
+
+.teacher-item-exit-active {
+  transform: translateX(-30vw);
+  opacity: 0;
+  transition: all 1.5s;
+}
+
 .teacher-item {
   background: var(--color-box-base);
   border: 1px solid var(--color-line-in-white);

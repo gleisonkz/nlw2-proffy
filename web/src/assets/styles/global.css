@@ -72,6 +72,38 @@ button:hover {
   transition: opacity 1s linear;
 }
 
+.fade-in {
+  animation: fade-in 0.8s ease-in;
+}
+
+.fade-out {
+  animation: fade-out 0.8s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 100;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
 @media (min-width: 700px) {
   :root {
     font-size: 62.5%;

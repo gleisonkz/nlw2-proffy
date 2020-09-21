@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent, useEffect, useContext } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
@@ -13,12 +13,19 @@ import api from '../../services/api';
 
 import './styles.css';
 import NavBar from '../../components/NavBar';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const TeacherList: React.FC = () => {
   const [fadeState, setFadeState] = useState('hidden');
+
   const [isSearched, setIsSearched] = useState(false);
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [totalTeachers, setTotalTeachers] = useState<number>(0);
+
+  const [teachers, setTeachers] = useState<Teacher[]>([]);
+  const [subject, setSubject] = useState('');
+  const [weekDay, setWeekDay] = useState('');
+  const [time, setTime] = useState('');
 
   useEffect(() => {
     setFadeState('visible');
@@ -33,12 +40,6 @@ const TeacherList: React.FC = () => {
     });
   }, []);
 
-  const [teachers, setTeachers] = useState<Teacher[]>([]);
-
-  const [subject, setSubject] = useState('');
-  const [weekDay, setWeekDay] = useState('');
-  const [time, setTime] = useState('');
-
   async function searchTeachers(e: FormEvent) {
     e.preventDefault();
     setIsSearched(true);
@@ -50,7 +51,7 @@ const TeacherList: React.FC = () => {
         time,
       },
     });
-    console.log('teachers');
+    console.log('teachers', response.data);
     setTeachers(response.data);
   }
 
@@ -100,14 +101,18 @@ const TeacherList: React.FC = () => {
           <button type="submit">Buscar</button>
         </form>
       </PageHeader>
+      <main className={`container ${fadeState}`}>
+        {teachers.map((teacher: Teacher) => (
+          <TeacherItem
+            key={teacher.teacherID}
+            teacher={teacher}
+            fadeState={fadeState}
+          />
+        ))}
 
-      <main>
-        {teachers.map((teacher: Teacher) => {
-          return <TeacherItem key={teacher.teacherID} teacher={teacher} />;
-        })}
-        {isSearched && teachers.length === 0 && (
-          <p>Nenhum professor encontrado com sua pesquisa.</p>
-        )}
+        {/*isSearched && teachers.length === 0 && (
+            <p>Nenhum professor encontrado com sua pesquisa.</p>
+          )*/}
       </main>
     </div>
   );

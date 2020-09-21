@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-
-import { Teacher, DayOfWeek } from '../../models/teacher';
+import { Teacher, DayOfWeek, LessonSchedule } from '../../models/teacher';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import api from '../../services/api';
 import './styles.css';
-import { LessonSchedule } from './../../models/teacher';
 
 interface TeacherItemProps {
   teacher: Teacher;
@@ -13,6 +11,7 @@ interface TeacherItemProps {
 
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
   const { lessonSchedule } = teacher;
+
   let [scheduleDays] = useState<LessonSchedule[]>([
     { weekDay: DayOfWeek.Domingo, from: '', to: '' },
     { weekDay: DayOfWeek.Segunda, from: '', to: '' },
@@ -39,7 +38,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
   }
 
   return (
-    <article className="teacher-item">
+    <article className={`teacher-item`}>
       <header>
         <img src={teacher.avatar} alt={teacher.name} />
         <div>

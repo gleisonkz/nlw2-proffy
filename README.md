@@ -48,6 +48,7 @@ Technologies that I used to develop this application
   - Transition effects added between the pages.
   - Transition effects added on pseudo elements of the buttons that have focus.
   - Creation of component with float label effect
+  - Effect in Teacher item using react-transition-group library
 
 ## 📌 Todo
 
